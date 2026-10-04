@@ -159,7 +159,7 @@
   ul.clean li a:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:2px}
   .deadline{color:var(--amber);font-weight:700;font-size:.82rem}
   .callout{background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 35%,var(--line));
-    border-radius:var(--radius);padding:16px 18px;margin-top:16px;font-size:.95rem}
+    border-radius:var(--radius);padding:16px 18px;margin-top:16px;margin-bottom:16px;font-size:.95rem}
   .callout .tip{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);font-weight:700;display:block;margin-bottom:5px}
   .pill{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;vertical-align:middle}
   .pill.free{background:var(--accent-soft);color:var(--accent)}
