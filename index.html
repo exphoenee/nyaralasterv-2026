@@ -136,6 +136,10 @@
   tbody tr:last-child td{border-bottom:0}
   tr.total td{font-weight:700;background:var(--amber-soft)}
   tr.total td.num{color:var(--ink)}
+  tr.goto{cursor:pointer;transition:background .12s}
+  tr.goto td:first-child b{color:var(--accent);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent);text-underline-offset:3px}
+  tr.goto:hover td{background:var(--accent-soft)}
+  tr.goto:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
 
   /* ---- Lists & callouts ---- */
   ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
@@ -219,16 +223,17 @@
     <table>
       <thead><tr><th>Úticél</th><th>Mód</th><th>Hossz</th><th class="num">Becsült költség</th><th class="num">Tartalék</th><th>Fő húzóerő</th></tr></thead>
       <tbody>
-        <tr><td><b>London</b></td><td>repülő</td><td>6 nap</td><td class="num">~2 450 €</td><td class="num">~950 €</td><td>Ingyenes science + történelem múzeumok</td></tr>
-        <tr><td><b>Bécs</b></td><td>autó</td><td>6 nap</td><td class="num">~1 800 €</td><td class="num">~1 600 €</td><td>Olcsó, közeli; 19 alatt ingyen múzeumok</td></tr>
-        <tr><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €</td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
-        <tr><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €</td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
-        <tr style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €</td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
-        <tr style="opacity:.92"><td><b>Kanada</b> 🍁</td><td>repülő</td><td>11 nap</td><td class="num">~9 500 €</td><td class="num" style="color:var(--crit)">−6 100 €</td><td>Niagara + nagyvárosok + science múzeumok — <b>bakancslistás</b></td></tr>
+        <tr class="goto" data-target="p-london" tabindex="0" role="link" aria-label="London terv megnyitása"><td><b>London</b></td><td>repülő</td><td>6 nap</td><td class="num">~2 450 €</td><td class="num">~950 €</td><td>Ingyenes science + történelem múzeumok</td></tr>
+        <tr class="goto" data-target="p-vienna" tabindex="0" role="link" aria-label="Bécs terv megnyitása"><td><b>Bécs</b></td><td>autó</td><td>6 nap</td><td class="num">~1 800 €</td><td class="num">~1 600 €</td><td>Olcsó, közeli; 19 alatt ingyen múzeumok</td></tr>
+        <tr class="goto" data-target="p-alps" tabindex="0" role="link" aria-label="Alpok és Bécs terv megnyitása"><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €</td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
+        <tr class="goto" data-target="p-munich" tabindex="0" role="link" aria-label="München terv megnyitása"><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €</td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
+        <tr class="goto" data-target="p-iceland" tabindex="0" role="link" aria-label="Izland terv megnyitása" style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €</td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
+        <tr class="goto" data-target="p-canada" tabindex="0" role="link" aria-label="Kanada terv megnyitása" style="opacity:.92"><td><b>Kanada</b> 🍁</td><td>repülő</td><td>11 nap</td><td class="num">~9 500 €</td><td class="num" style="color:var(--crit)">−6 100 €</td><td>Niagara + nagyvárosok + science múzeumok — <b>bakancslistás</b></td></tr>
       </tbody>
     </table>
   </div>
-  <p style="margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)">🌋 Az <b>Izland</b> (~6 000 €) és 🍁 a <b>Kanada</b> (~9 500 €) terv tudatosan a 3 400 €-s kereten <b>felül</b> van (kérésre kidolgozva) — bakancslistás álomutak. Mindkét fülön megmutatom, mivel faragható le a költség. Minden úticélnál találsz egy <b>„🔗 Hasznos linkek”</b> blokkot a hivatalos oldalakkal, hogy előre felkészülhessetek.</p>
+  <p style="margin:12px 0 0;font-size:.88rem;color:var(--accent);font-weight:600">👆 Kattints egy sorra a táblázatban az adott terv megnyitásához.</p>
+  <p style="margin:10px 0 0;font-size:.9rem;color:var(--ink-soft)">🌋 Az <b>Izland</b> (~6 000 €) és 🍁 a <b>Kanada</b> (~9 500 €) terv tudatosan a 3 400 €-s kereten <b>felül</b> van (kérésre kidolgozva) — bakancslistás álomutak. Mindkét fülön megmutatom, mivel faragható le a költség. Minden úticélnál találsz egy <b>„🔗 Hasznos linkek”</b> blokkot a hivatalos oldalakkal, hogy előre felkészülhessetek.</p>
 
   <div class="reco">
     <h3>A javaslatom</h3>
@@ -332,6 +337,26 @@
 
   <div class="callout"><span class="tip">Insider tipp</span>A három nagy múzeum ingyenessége miatt Londonban a pénzt a szállásra és egy-két fizetős „nagy” élményre (Tower, Harry Potter) érdemes csoportosítani — így egy kifejezetten drága város is belefér a keretbe. London egyben a világ egyik <b>legjobb gluténmentes városa</b>: szinte minden étteremnek van jelölt GF-menüje.</div>
 
+  <h3>✈️ Repjegy — hol foglalj</h3>
+  <div class="linkgrid">
+    <a href="https://www.skyscanner.net/transport/flights/bud/lond/" target="_blank" rel="noopener"><span class="ic">🔎</span><span class="lt"><b>Skyscanner (BUD→London)</b><span>skyscanner.net</span></span></a>
+    <a href="https://www.google.com/travel/flights?q=flights%20from%20Budapest%20to%20London" target="_blank" rel="noopener"><span class="ic">🧭</span><span class="lt"><b>Google Flights</b><span>google.com/travel/flights</span></span></a>
+    <a href="https://www.kayak.com/flights/BUD-LON" target="_blank" rel="noopener"><span class="ic">📊</span><span class="lt"><b>Kayak</b><span>kayak.com</span></span></a>
+    <a href="https://wizzair.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Wizz Air (direkt)</b><span>wizzair.com</span></span></a>
+    <a href="https://www.ryanair.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Ryanair (direkt)</b><span>ryanair.com</span></span></a>
+  </div>
+
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">Keress <b>„2 hálószobás apartmant" / „entire place"</b> típust — ennek a fürdője <b>csak a lakáshoz tartozik</b> (gyakran 2 hálóhoz 1–2 saját fürdő is van). Kerüld a „private room in hostel/guesthouse" fajtát, ahol a fürdő az egész házzal közös! Az alábbiak mind 2 hálós, saját fürdős opciók:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=London&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — 2 hálós lakások</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/London/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — min. 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.vrbo.com/search?q=London&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — 2 bedroom</b><span>vrbo.com</span></span></a>
+    <a href="https://www.staycity.com/london/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Staycity Aparthotels</b><span>staycity.com</span></span></a>
+    <a href="https://www.marlinapartments.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Marlin Apartments</b><span>marlinapartments.com</span></span></a>
+    <a href="https://www.nativeplaces.com/locations/london/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Native Places (apartman)</b><span>nativeplaces.com</span></span></a>
+  </div>
+
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
     <a href="https://www.nhm.ac.uk" target="_blank" rel="noopener"><span class="ic">🦕</span><span class="lt"><b>Natural History Museum</b><span>nhm.ac.uk</span></span></a>
@@ -416,6 +441,16 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Mivel a 19 év alattiaknak a Naturhistorisches és a Technisches Museum is <b>ingyenes</b>, a bécsi terv messze a legolcsóbb — a ~1 600 € tartalékból akár 2–3 nappal meg is hosszabbíthatjátok (pl. egy napos Salzburg-kirándulással), vagy magasabb kategóriás szállást választhattok.</div>
+
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">Válassz <b>2 hálószobás „entire place" apartmant</b> (saját fürdő, nem az egész házzal közös), lehetőleg U-Bahn közelében, így az autó a szállásnál marad. Jó opciók az U1 mentén (Taubstummengasse) és a Stadthalle környékén:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=Vienna&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — 2 hálós lakások</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Vienna/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — min. 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.vrbo.com/search?q=Vienna&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — 2 bedroom</b><span>vrbo.com</span></span></a>
+    <a href="https://www.adagio-city.com/gb/city/vienna.shtml" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Aparthotel Adagio Wien</b><span>adagio-city.com</span></span></a>
+    <a href="https://www.viennaresidence.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Vienna Residence</b><span>viennaresidence.com</span></span></a>
+  </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
@@ -514,6 +549,17 @@
 
   <div class="callout"><span class="tip">Insider tipp</span>Ez a leggazdagabb „élménymix” — de ügyelj a pakolásra: 4 éj egy helyen az Alpokban, majd <b>egyszeri</b> átszállás Bécsbe. Így nem napi csomagolás. A Hallstatt-faluba reggel 9 előtt vagy 16 után menj — napközben zsúfolásig megtelik buszos csoportokkal.</div>
 
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">Alpesi bázisra <b>2 hálószobás „entire place" apartmant</b> keress (saját fürdő). Obertraun/Bad Ischl környékén jó választás pl. a <i>Traum Panorama Penthouse</i>, <i>Appartement Gosausee</i> vagy a <i>BERG-GOLD</i> (mind 2 háló, 4 fő). Bécsi szakaszra lásd a Bécs-fül szállásait:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=Obertraun&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — Obertraun 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Obertraun--Austria/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — Obertraun 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.hallstatt.net/accommodation/apartments/" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Hallstatt.net apartmanok</b><span>hallstatt.net</span></span></a>
+    <a href="https://obertraun.net/accommodation/apartments/" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Obertraun apartmanok</b><span>obertraun.net</span></span></a>
+    <a href="https://www.interhome.com/austria/salzkammergut/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Interhome Salzkammergut</b><span>interhome.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Vienna&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏙️</span><span class="lt"><b>Booking — Bécs 2 háló</b><span>booking.com</span></span></a>
+  </div>
+
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
     <a href="https://www.dachstein-salzkammergut.com/en" target="_blank" rel="noopener"><span class="ic">🧊</span><span class="lt"><b>Dachstein / jégbarlang</b><span>dachstein-salzkammergut.com</span></span></a>
@@ -600,6 +646,17 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp &amp; őszinte figyelmeztetés</span>Ez a legnagyobb „wow”, de kimondom: a <b>~8 órás út</b> ütközik a „ne kelljen sokat utazni” kéréseddel, és a <b>Zugspitze önmagában ~200 €</b> 3 főnek. Ha a budget szorít, hagyd el a Zugspitzét (a Partnachklamm szurdok a tört részéért hasonlóan látványos) — így marad bőven tartalék. 10 napra ez a terv <b>nem</b> fér bele a keretbe; 7 nap az ideális.</div>
+
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">Két bázis: <b>München</b> (3 éj) és <b>Garmisch-Partenkirchen</b> (3 éj). Mindkettőhöz <b>2 hálószobás „entire place" apartmant</b> keress (saját fürdő). Garmischban jó pl. a <i>Waldruhe</i> (74 m², 2 háló, 4 fő), <i>Ferienwohnung Cataleya</i> vagy <i>Gloria</i>:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=Munich&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — München 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Munich--Germany/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — München 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Garmisch-Partenkirchen&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Booking — Garmisch 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Garmisch-Partenkirchen--Germany/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Airbnb — Garmisch 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.gapa-tourismus.de/en/accommodation" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Garmisch hivatalos szállások</b><span>gapa-tourismus.de</span></span></a>
+    <a href="https://www.interhome.com/germany/bavaria/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Interhome Bajorország</b><span>interhome.com</span></span></a>
+  </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
@@ -716,6 +773,26 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Ha Izland a cél, inkább <b>halaszd egy nagyobb büdzsés évre</b>, és akkor csináld rendesen (7+ nap, nyugodt tempó) — a kapkodós, túl olcsóra húzott izlandi út pont a lényeget veszíti el. Nyáron a <b>21–22 órás nappali fény</b> miatt rugalmas a program (késő esti vízeséseknél alig van tömeg), viszont <b>északi fény nyáron nincs</b> — azt csak szept.–márc. között látni.</div>
+
+  <h3>✈️ Repjegy — hol foglalj</h3>
+  <div class="linkgrid">
+    <a href="https://www.skyscanner.net/transport/flights/bud/kef/" target="_blank" rel="noopener"><span class="ic">🔎</span><span class="lt"><b>Skyscanner (BUD→Keflavík)</b><span>skyscanner.net</span></span></a>
+    <a href="https://www.google.com/travel/flights?q=flights%20from%20Budapest%20to%20Reykjavik" target="_blank" rel="noopener"><span class="ic">🧭</span><span class="lt"><b>Google Flights</b><span>google.com/travel/flights</span></span></a>
+    <a href="https://www.kayak.com/flights/BUD-KEF" target="_blank" rel="noopener"><span class="ic">📊</span><span class="lt"><b>Kayak</b><span>kayak.com</span></span></a>
+    <a href="https://wizzair.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Wizz Air (direkt járat)</b><span>wizzair.com</span></span></a>
+    <a href="https://www.icelandair.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Icelandair</b><span>icelandair.com</span></span></a>
+  </div>
+
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">A körúthoz Reykjavík a fő bázis + 2–3 éj a déli parton (Vík/Höfn). Mindenhol <b>2 hálószobás „entire place" apartmant</b> keress (saját fürdő). Reykjavíkban jó pl. a <i>Reykjavik Residence</i>, <i>Reykjavik4you</i>, <i>Tyr Apartments</i>:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=Reykjavik&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — Reykjavík 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Reykjavik--Iceland/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — Reykjavík 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://reykjavik4you.com/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Reykjavik4you Apartments</b><span>reykjavik4you.com</span></span></a>
+    <a href="https://www.rrhotel.is/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Reykjavik Residence</b><span>rrhotel.is</span></span></a>
+    <a href="https://www.vrbo.com/search?q=South%20Iceland&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — déli part 2 háló</b><span>vrbo.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Vik%20Iceland&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Booking — Vík 2 háló</b><span>booking.com</span></span></a>
+  </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
@@ -837,6 +914,26 @@
     <li><b>Útlevél</b> — a beutazástól számított érvényesség; ellenőrizd a 6 hónapos szabályt.</li>
   </ul>
 
+  <h3>✈️ Repjegy — hol foglalj</h3>
+  <div class="linkgrid">
+    <a href="https://www.skyscanner.net/transport/flights/bud/yyza/" target="_blank" rel="noopener"><span class="ic">🔎</span><span class="lt"><b>Skyscanner (BUD→Toronto)</b><span>skyscanner.net</span></span></a>
+    <a href="https://www.google.com/travel/flights?q=flights%20from%20Budapest%20to%20Toronto" target="_blank" rel="noopener"><span class="ic">🧭</span><span class="lt"><b>Google Flights (open-jaw!)</b><span>google.com/travel/flights</span></span></a>
+    <a href="https://www.kayak.com/flights/BUD-YTO" target="_blank" rel="noopener"><span class="ic">📊</span><span class="lt"><b>Kayak</b><span>kayak.com</span></span></a>
+    <a href="https://www.aircanada.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Air Canada (direkt)</b><span>aircanada.com</span></span></a>
+    <a href="https://www.lufthansa.com" target="_blank" rel="noopener"><span class="ic">🛫</span><span class="lt"><b>Lufthansa</b><span>lufthansa.com</span></span></a>
+  </div>
+
+  <h3>🛏️ Szállás — 2 hálószobás apartman <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— saját fürdő, nem közös</small></h3>
+  <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 12px">Fő bázisok: <b>Toronto</b>, <b>Ottawa</b>, <b>Montréal</b>. Mindenhol <b>2 hálószobás (gyakran 2 fürdős) „entire place" condót</b> keress (saját fürdő). Belvárosi, CN Tower-közeli 2 háló/2 fürdő lakások bőven vannak:</p>
+  <div class="linkgrid">
+    <a href="https://www.booking.com/searchresults.html?ss=Toronto&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — Toronto 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Toronto--Canada/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — Toronto 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Montreal&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏙️</span><span class="lt"><b>Booking — Montréal 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Montreal--Canada/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Airbnb — Montréal 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Ottawa&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🍁</span><span class="lt"><b>Booking — Ottawa 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.sonder.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Sonder (apartman-hotelek)</b><span>sonder.com</span></span></a>
+  </div>
+
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
   <div class="linkgrid">
     <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html" target="_blank" rel="noopener"><span class="ic">🛂</span><span class="lt"><b>eTA (hivatalos!)</b><span>canada.ca</span></span></a>
@@ -880,16 +977,22 @@
 
 <script>
 (function(){
+  var STORE_KEY='nyaralasterv.activeTab';
   var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
-  function sel(tab){
+
+  function sel(tab,opts){
+    opts=opts||{};
     tabs.forEach(function(t){
       var on=t===tab;
       t.setAttribute('aria-selected',on?'true':'false');
+      t.setAttribute('tabindex',on?'0':'-1');
       document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
     });
-    tab.focus();
-    window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+    try{localStorage.setItem(STORE_KEY,tab.id);}catch(e){}
+    if(opts.focus!==false)tab.focus();
+    if(opts.scroll!==false)window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
   }
+
   tabs.forEach(function(tab,i){
     tab.addEventListener('click',function(){sel(tab);});
     tab.addEventListener('keydown',function(e){
@@ -901,6 +1004,27 @@
       if(n){e.preventDefault();sel(n);}
     });
   });
+
+  // Áttekintés táblázat sorai → tabváltás
+  function tabForPanel(panelId){
+    for(var k=0;k<tabs.length;k++){if(tabs[k].getAttribute('aria-controls')===panelId)return tabs[k];}
+    return null;
+  }
+  [].slice.call(document.querySelectorAll('tr.goto')).forEach(function(row){
+    function go(){var t=tabForPanel(row.getAttribute('data-target'));if(t)sel(t);}
+    row.addEventListener('click',go);
+    row.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}
+    });
+  });
+
+  // Első betöltés: a localStorage-ban mentett tab visszaállítása
+  var saved=null;
+  try{saved=localStorage.getItem(STORE_KEY);}catch(e){}
+  var start=null;
+  if(saved){for(var j=0;j<tabs.length;j++){if(tabs[j].id===saved){start=tabs[j];break;}}}
+  if(!start)start=tabs[0];
+  sel(start,{focus:false,scroll:false});
 })();
 </script>
 
