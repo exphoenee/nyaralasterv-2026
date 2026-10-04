@@ -245,12 +245,12 @@
     <table>
       <thead><tr><th>Úticél</th><th>Mód</th><th>Hossz</th><th class="num">Becsült költség</th><th class="num">Tartalék</th><th>Fő húzóerő</th></tr></thead>
       <tbody>
-        <tr class="goto" data-target="p-london" tabindex="0" role="link" aria-label="London terv megnyitása"><td><b>London</b></td><td>repülő</td><td>6 nap</td><td class="num">~2 450 €</td><td class="num">~950 €</td><td>Ingyenes science + történelem múzeumok</td></tr>
-        <tr class="goto" data-target="p-vienna" tabindex="0" role="link" aria-label="Bécs terv megnyitása"><td><b>Bécs</b></td><td>autó</td><td>6 nap</td><td class="num">~1 800 €</td><td class="num">~1 600 €</td><td>Olcsó, közeli; 19 alatt ingyen múzeumok</td></tr>
-        <tr class="goto" data-target="p-alps" tabindex="0" role="link" aria-label="Alpok és Bécs terv megnyitása"><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €</td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
-        <tr class="goto" data-target="p-munich" tabindex="0" role="link" aria-label="München terv megnyitása"><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €</td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
-        <tr class="goto" data-target="p-iceland" tabindex="0" role="link" aria-label="Izland terv megnyitása" style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €</td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
-        <tr class="goto" data-target="p-canada" tabindex="0" role="link" aria-label="Kanada terv megnyitása" style="opacity:.92"><td><b>Kanada</b> 🍁</td><td>repülő</td><td>11 nap</td><td class="num">~9 500 €</td><td class="num" style="color:var(--crit)">−6 100 €</td><td>Niagara + nagyvárosok + science múzeumok — <b>bakancslistás</b></td></tr>
+        <tr class="goto" data-target="p-london" tabindex="0" role="link" aria-label="London terv megnyitása"><td><b>London</b></td><td>repülő</td><td>6 nap</td><td class="num">~2 450 €<br><small style="color:var(--muted)">~870 e Ft</small></td><td class="num">~950 €</td><td>Ingyenes science + történelem múzeumok</td></tr>
+        <tr class="goto" data-target="p-vienna" tabindex="0" role="link" aria-label="Bécs terv megnyitása"><td><b>Bécs</b></td><td>autó</td><td>6 nap</td><td class="num">~1 800 €<br><small style="color:var(--muted)">~639 e Ft</small></td><td class="num">~1 600 €</td><td>Olcsó, közeli; 19 alatt ingyen múzeumok</td></tr>
+        <tr class="goto" data-target="p-alps" tabindex="0" role="link" aria-label="Alpok és Bécs terv megnyitása"><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €<br><small style="color:var(--muted)">~1,0 M Ft</small></td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
+        <tr class="goto" data-target="p-munich" tabindex="0" role="link" aria-label="München terv megnyitása"><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €<br><small style="color:var(--muted)">~959 e Ft</small></td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
+        <tr class="goto" data-target="p-iceland" tabindex="0" role="link" aria-label="Izland terv megnyitása" style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €<br><small style="color:var(--muted)">~2,1 M Ft</small></td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
+        <tr class="goto" data-target="p-canada" tabindex="0" role="link" aria-label="Kanada terv megnyitása" style="opacity:.92"><td><b>Kanada</b> 🍁</td><td>repülő</td><td>11 nap</td><td class="num">~9 500 €<br><small style="color:var(--muted)">~3,4 M Ft</small></td><td class="num" style="color:var(--crit)">−6 100 €</td><td>Niagara + nagyvárosok + science múzeumok — <b>bakancslistás</b></td></tr>
       </tbody>
     </table>
   </div>
@@ -337,17 +337,18 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 6 nap)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th class="num">GBP (£)</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Repjegy BUD↔London (3 fő)</td><td class="num">450</td><td>Nyári ár, korán foglalva</td></tr>
-      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80</td><td>Vonat/busz/parkolás</td></tr>
-      <tr><td>Szállás (5 éj, családi szoba)</td><td class="num">880</td><td>Zone 2, ~£150/éj</td></tr>
-      <tr><td>Helyi közlekedés (Oyster)</td><td class="num">120</td><td>Napi sapka + tini-kedvezmény</td></tr>
-      <tr><td>Étkezés (6 nap, GF)</td><td class="num">650</td><td>Dráguló város</td></tr>
-      <tr><td>Belépők (múzeumok ingyen!)</td><td class="num">270</td><td>Tower, Greenwich, extrák</td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~2 450</td><td>+ Harry Potter stúdió ~150 €</td></tr>
+      <tr><td>Repjegy BUD↔London (3 fő)</td><td class="num">450 €</td><td class="num">£385</td><td class="num">160 000</td><td>Nyári ár, korán foglalva</td></tr>
+      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80 €</td><td class="num">£68</td><td class="num">28 000</td><td>Vonat/busz/parkolás</td></tr>
+      <tr><td>Szállás (5 éj, családi szoba)</td><td class="num">880 €</td><td class="num">£752</td><td class="num">312 000</td><td>Zone 2, ~£150/éj</td></tr>
+      <tr><td>Helyi közlekedés (Oyster)</td><td class="num">120 €</td><td class="num">£103</td><td class="num">43 000</td><td>Napi sapka + tini-kedvezmény</td></tr>
+      <tr><td>Étkezés (6 nap, GF)</td><td class="num">650 €</td><td class="num">£556</td><td class="num">231 000</td><td>Dráguló város</td></tr>
+      <tr><td>Belépők (múzeumok ingyen!)</td><td class="num">270 €</td><td class="num">£231</td><td class="num">96 000</td><td>Tower, Greenwich, extrák</td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 450 €</td><td class="num">~£2 095</td><td class="num">~870 000</td><td>+ Harry Potter stúdió ~150 €</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">Árfolyam (tájékoztató): 1 € ≈ 355 Ft · 1 £ ≈ 415 Ft. Az árak változhatnak.</p>
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
@@ -461,16 +462,17 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 6 nap)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR (helyi)</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">160</td><td>10 napos matrica 12,80 €</td></tr>
-      <tr><td>Szállás (5 éj)</td><td class="num">650</td><td>~130 €/éj, U-Bahn mellett</td></tr>
-      <tr><td>Étkezés (6 nap, GF)</td><td class="num">550</td><td></td></tr>
-      <tr><td>Belépők</td><td class="num">250</td><td>NHM + Technik ingyen; Schönbrunn, Prater, Haus des Meeres</td></tr>
-      <tr><td>Parkolás</td><td class="num">100</td><td></td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~1 710</td><td>Marad ~1 600 € tartalék</td></tr>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">160 €</td><td class="num">57 000</td><td>10 napos matrica 12,80 €</td></tr>
+      <tr><td>Szállás (5 éj)</td><td class="num">650 €</td><td class="num">231 000</td><td>~130 €/éj, U-Bahn mellett</td></tr>
+      <tr><td>Étkezés (6 nap, GF)</td><td class="num">550 €</td><td class="num">195 000</td><td></td></tr>
+      <tr><td>Belépők</td><td class="num">250 €</td><td class="num">89 000</td><td>NHM + Technik ingyen; Schönbrunn, Prater, Haus des Meeres</td></tr>
+      <tr><td>Parkolás</td><td class="num">100 €</td><td class="num">36 000</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~1 710 €</td><td class="num">~607 000</td><td>Marad ~1 600 € tartalék</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">A helyi pénznem az euró. Árfolyam (tájékoztató): 1 € ≈ 355 Ft.</p>
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
@@ -572,16 +574,17 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 9 nap)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR (helyi)</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">250</td><td>~1 600 km összesen</td></tr>
-      <tr><td>Szállás (4 éj Alpok + 4 éj Bécs)</td><td class="num">1 120</td><td>~140 €/éj átlag</td></tr>
-      <tr><td>Étkezés (9 nap, GF)</td><td class="num">820</td><td></td></tr>
-      <tr><td>Belépők</td><td class="num">550</td><td>Dachstein All-in-One (~192 €), sóbánya, Schafberg, bécsi múzeumok</td></tr>
-      <tr><td>Parkolás (Bécs)</td><td class="num">90</td><td></td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~2 830</td><td>~570 € tartalék</td></tr>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">250 €</td><td class="num">89 000</td><td>~1 600 km összesen</td></tr>
+      <tr><td>Szállás (4 éj Alpok + 4 éj Bécs)</td><td class="num">1 120 €</td><td class="num">398 000</td><td>~140 €/éj átlag</td></tr>
+      <tr><td>Étkezés (9 nap, GF)</td><td class="num">820 €</td><td class="num">291 000</td><td></td></tr>
+      <tr><td>Belépők</td><td class="num">550 €</td><td class="num">195 000</td><td>Dachstein All-in-One (~192 €), sóbánya, Schafberg, bécsi múzeumok</td></tr>
+      <tr><td>Parkolás (Bécs)</td><td class="num">90 €</td><td class="num">32 000</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 830 €</td><td class="num">~1 005 000</td><td>~570 € tartalék</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">A helyi pénznem az euró. Árfolyam (tájékoztató): 1 € ≈ 355 Ft.</p>
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
@@ -675,16 +678,17 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 7 nap)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR (helyi)</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">280</td><td>Hosszú út; Németo-ban nincs matrica</td></tr>
-      <tr><td>Szállás (3 éj München + 3 éj Garmisch)</td><td class="num">900</td><td>~150 €/éj</td></tr>
-      <tr><td>Étkezés (7 nap, GF)</td><td class="num">700</td><td>Drágább régió</td></tr>
-      <tr><td>Belépők</td><td class="num">480</td><td>Deutsches Museum, Neuschwanstein, Zugspitze (~200 €!), Berchtesgaden</td></tr>
-      <tr><td>Parkolás</td><td class="num">80</td><td></td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~2 700</td><td>~700 € tartalék</td></tr>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">280 €</td><td class="num">99 000</td><td>Hosszú út; Németo-ban nincs matrica</td></tr>
+      <tr><td>Szállás (3 éj München + 3 éj Garmisch)</td><td class="num">900 €</td><td class="num">320 000</td><td>~150 €/éj</td></tr>
+      <tr><td>Étkezés (7 nap, GF)</td><td class="num">700 €</td><td class="num">249 000</td><td>Drágább régió</td></tr>
+      <tr><td>Belépők</td><td class="num">480 €</td><td class="num">170 000</td><td>Deutsches Museum, Neuschwanstein, Zugspitze (~200 €!), Berchtesgaden</td></tr>
+      <tr><td>Parkolás</td><td class="num">80 €</td><td class="num">28 000</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 700 €</td><td class="num">~959 000</td><td>~700 € tartalék</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">A helyi pénznem az euró. Árfolyam (tájékoztató): 1 € ≈ 355 Ft.</p>
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
@@ -795,19 +799,20 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 8 nap, középkategória)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th class="num">ISK (kr)</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Repjegy BUD↔KEF (3 fő)</td><td class="num">400</td><td>Wizz direkt — meglepően olcsó</td></tr>
-      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80</td><td></td></tr>
-      <tr><td>Bérautó (7 nap, nyár)</td><td class="num">750</td><td>SUV/családi, ~100 €/nap csúcsszezon</td></tr>
-      <tr><td>Üzemanyag (benzin drága!)</td><td class="num">350</td><td>~1 200 km körút</td></tr>
-      <tr><td>Szállás (7 éj, vendégház/apartman)</td><td class="num">1 400</td><td>~200 €/éj csúcsszezon</td></tr>
-      <tr><td>Étkezés (8 nap, GF)</td><td class="num">1 600</td><td>Nagyon drága — a főétel 25–35 €</td></tr>
-      <tr><td>Belépők / fürdők / túrák</td><td class="num">900</td><td>Blue Lagoon, Perlan, gleccsertúra, hajó</td></tr>
-      <tr><td>Parkolók, apróbb költségek</td><td class="num">120</td><td></td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~5 600–6 000</td><td style="color:var(--crit)">A keret ~1,7-szerese</td></tr>
+      <tr><td>Repjegy BUD↔KEF (3 fő)</td><td class="num">400 €</td><td class="num">60 000</td><td class="num">142 000</td><td>Wizz direkt — meglepően olcsó</td></tr>
+      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80 €</td><td class="num">12 000</td><td class="num">28 000</td><td></td></tr>
+      <tr><td>Bérautó (7 nap, nyár)</td><td class="num">750 €</td><td class="num">112 500</td><td class="num">266 000</td><td>SUV/családi, ~100 €/nap csúcsszezon</td></tr>
+      <tr><td>Üzemanyag (benzin drága!)</td><td class="num">350 €</td><td class="num">52 500</td><td class="num">124 000</td><td>~1 200 km körút</td></tr>
+      <tr><td>Szállás (7 éj, vendégház/apartman)</td><td class="num">1 400 €</td><td class="num">210 000</td><td class="num">497 000</td><td>~200 €/éj csúcsszezon</td></tr>
+      <tr><td>Étkezés (8 nap, GF)</td><td class="num">1 600 €</td><td class="num">240 000</td><td class="num">568 000</td><td>Nagyon drága — a főétel 25–35 €</td></tr>
+      <tr><td>Belépők / fürdők / túrák</td><td class="num">900 €</td><td class="num">135 000</td><td class="num">320 000</td><td>Blue Lagoon, Perlan, gleccsertúra, hajó</td></tr>
+      <tr><td>Parkolók, apróbb költségek</td><td class="num">120 €</td><td class="num">18 000</td><td class="num">43 000</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~5 600–6 000 €</td><td class="num">~840 e–900 e</td><td class="num">~2,0–2,1 M</td><td style="color:var(--crit)">A keret ~1,7-szerese</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">Árfolyam (tájékoztató): 1 € ≈ 355 Ft · 1 € ≈ 150 ISK · 100 ISK ≈ 237 Ft. Az árak változhatnak.</p>
 
   <h3>Hogyan faragható le a költség?</h3>
   <ul class="clean">
@@ -957,18 +962,19 @@
 
   <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 11 nap, középkategória)</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th class="num">CAD</th><th class="num">HUF (Ft)</th><th>Megjegyzés</th></tr></thead>
     <tbody>
-      <tr><td>Repjegy BUD↔Kanada (3 fő, open-jaw)</td><td class="num">2 700</td><td>Nyári direkt járat, ~900 €/fő</td></tr>
-      <tr><td>eTA (3 fő)</td><td class="num">15</td><td>7 CAD/fő, 5 évig érvényes</td></tr>
-      <tr><td>Bérautó (10 nap) + üzemanyag</td><td class="num">1 100</td><td>Vagy vonat/busz a városok között</td></tr>
-      <tr><td>Szállás (10 éj)</td><td class="num">1 900</td><td>Toronto/Montréal drága, ~190 €/éj</td></tr>
-      <tr><td>Étkezés (11 nap, GF)</td><td class="num">1 450</td><td>+ borravaló-kultúra (15–20%)</td></tr>
-      <tr><td>Belépők / hajók / múzeumok</td><td class="num">1 000</td><td>CN Tower, Niagara, múzeumok, Ezer-sziget</td></tr>
-      <tr><td>Parkolás, apró, tartalék</td><td class="num">350</td><td></td></tr>
-      <tr class="total"><td>Összesen</td><td class="num">~8 500–9 500</td><td style="color:var(--crit)">A keret ~2,5–2,8-szerese</td></tr>
+      <tr><td>Repjegy BUD↔Kanada (3 fő, open-jaw)</td><td class="num">2 700 €</td><td class="num">4 000</td><td class="num">959 000</td><td>Nyári direkt járat, ~900 €/fő</td></tr>
+      <tr><td>eTA (3 fő)</td><td class="num">15 €</td><td class="num">22</td><td class="num">5 000</td><td>7 CAD/fő, 5 évig érvényes</td></tr>
+      <tr><td>Bérautó (10 nap) + üzemanyag</td><td class="num">1 100 €</td><td class="num">1 630</td><td class="num">391 000</td><td>Vagy vonat/busz a városok között</td></tr>
+      <tr><td>Szállás (10 éj)</td><td class="num">1 900 €</td><td class="num">2 810</td><td class="num">675 000</td><td>Toronto/Montréal drága, ~190 €/éj</td></tr>
+      <tr><td>Étkezés (11 nap, GF)</td><td class="num">1 450 €</td><td class="num">2 150</td><td class="num">515 000</td><td>+ borravaló-kultúra (15–20%)</td></tr>
+      <tr><td>Belépők / hajók / múzeumok</td><td class="num">1 000 €</td><td class="num">1 480</td><td class="num">355 000</td><td>CN Tower, Niagara, múzeumok, Ezer-sziget</td></tr>
+      <tr><td>Parkolás, apró, tartalék</td><td class="num">350 €</td><td class="num">520</td><td class="num">124 000</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~8 500–9 500 €</td><td class="num">~12 600–14 100</td><td class="num">~3,0–3,4 M</td><td style="color:var(--crit)">A keret ~2,5–2,8-szerese</td></tr>
     </tbody>
   </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin:8px 0 0">Árfolyam (tájékoztató): 1 € ≈ 355 Ft · 1 € ≈ 1,48 CAD · 1 CAD ≈ 240 Ft. Az árak változhatnak.</p>
 
   <h3>Hogyan faragható le a költség?</h3>
   <ul class="clean">
