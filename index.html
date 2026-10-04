@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Családi nyaralásterv 2026 — 5 úticél, Pécs kiindulással.">
+<meta name="description" content="Családi nyaralásterv 2026 — 6 úticél, Pécs kiindulással.">
 <title>Nyaralásterv 2026 — 4 úticél</title>
 <style>
   :root{
@@ -153,6 +153,17 @@
   .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:640px){.two{grid-template-columns:1fr}.block{grid-template-columns:70px 1fr}}
 
+  .linkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:0}
+  .linkgrid a{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--ink);font-size:.9rem;
+    box-shadow:var(--shadow);transition:border-color .15s,transform .1s}
+  .linkgrid a:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .linkgrid a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .linkgrid a .ic{font-size:1.1rem;flex:0 0 auto}
+  .linkgrid a .lt{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+  .linkgrid a .lt b{font-weight:650}
+  .linkgrid a .lt span{font-size:.74rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .linkgrid a::after{content:"↗";margin-left:auto;color:var(--accent);font-size:.8rem;flex:0 0 auto}
   footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 60px;color:var(--ink-soft);font-size:.82rem}
   footer a{color:var(--accent)}
   .srcs{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
@@ -186,6 +197,7 @@
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-alps"     id="t-alps">⛰️ Alpok + Bécs</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-munich"   id="t-munich">🏰 München + Bajor-Alpok</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-iceland"  id="t-iceland">🌋 Izland <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-canada"   id="t-canada">🍁 Kanada <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
     </div>
   </div>
 </div>
@@ -207,10 +219,11 @@
         <tr><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €</td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
         <tr><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €</td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
         <tr style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €</td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
+        <tr style="opacity:.92"><td><b>Kanada</b> 🍁</td><td>repülő</td><td>11 nap</td><td class="num">~9 500 €</td><td class="num" style="color:var(--crit)">−6 100 €</td><td>Niagara + nagyvárosok + science múzeumok — <b>bakancslistás</b></td></tr>
       </tbody>
     </table>
   </div>
-  <p style="margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)">🌋 Az <b>Izland</b>-terv tudatosan a 3 400 €-s kereten <b>felül</b> van (kérésre kidolgozva) — reálisan ~6 000 € 3 főre. A fülön belül megmutatom, mivel lehet lefaragni (vendégházak, önellátás, olcsóbb autó).</p>
+  <p style="margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)">🌋 Az <b>Izland</b> (~6 000 €) és 🍁 a <b>Kanada</b> (~9 500 €) terv tudatosan a 3 400 €-s kereten <b>felül</b> van (kérésre kidolgozva) — bakancslistás álomutak. Mindkét fülön megmutatom, mivel faragható le a költség. Minden úticélnál találsz egy <b>„🔗 Hasznos linkek”</b> blokkot a hivatalos oldalakkal, hogy előre felkészülhessetek.</p>
 
   <div class="reco">
     <h3>A javaslatom</h3>
@@ -313,6 +326,19 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>A három nagy múzeum ingyenessége miatt Londonban a pénzt a szállásra és egy-két fizetős „nagy” élményre (Tower, Harry Potter) érdemes csoportosítani — így egy kifejezetten drága város is belefér a keretbe. London egyben a világ egyik <b>legjobb gluténmentes városa</b>: szinte minden étteremnek van jelölt GF-menüje.</div>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.nhm.ac.uk" target="_blank" rel="noopener"><span class="ic">🦕</span><span class="lt"><b>Natural History Museum</b><span>nhm.ac.uk</span></span></a>
+    <a href="https://www.sciencemuseum.org.uk" target="_blank" rel="noopener"><span class="ic">🚀</span><span class="lt"><b>Science Museum</b><span>sciencemuseum.org.uk</span></span></a>
+    <a href="https://www.britishmuseum.org" target="_blank" rel="noopener"><span class="ic">🏛️</span><span class="lt"><b>British Museum</b><span>britishmuseum.org</span></span></a>
+    <a href="https://www.rmg.co.uk/royal-observatory" target="_blank" rel="noopener"><span class="ic">🔭</span><span class="lt"><b>Royal Observatory</b><span>rmg.co.uk</span></span></a>
+    <a href="https://www.hrp.org.uk/tower-of-london" target="_blank" rel="noopener"><span class="ic">🏰</span><span class="lt"><b>Tower of London</b><span>hrp.org.uk</span></span></a>
+    <a href="https://www.wbstudiotour.co.uk" target="_blank" rel="noopener"><span class="ic">⚡</span><span class="lt"><b>Harry Potter stúdió</b><span>wbstudiotour.co.uk</span></span></a>
+    <a href="https://tfl.gov.uk/fares/" target="_blank" rel="noopener"><span class="ic">🚇</span><span class="lt"><b>Közlekedés / Oyster (TfL)</b><span>tfl.gov.uk</span></span></a>
+    <a href="https://boroughmarket.org.uk" target="_blank" rel="noopener"><span class="ic">🍴</span><span class="lt"><b>Borough Market</b><span>boroughmarket.org.uk</span></span></a>
+    <a href="https://www.findmeglutenfree.com/gb/london" target="_blank" rel="noopener"><span class="ic">🌾</span><span class="lt"><b>Gluténmentes térkép</b><span>findmeglutenfree.com</span></span></a>
+  </div>
 </section>
 
 <!-- ============ VIENNA ============ -->
@@ -385,6 +411,19 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Mivel a 19 év alattiaknak a Naturhistorisches és a Technisches Museum is <b>ingyenes</b>, a bécsi terv messze a legolcsóbb — a ~1 600 € tartalékból akár 2–3 nappal meg is hosszabbíthatjátok (pl. egy napos Salzburg-kirándulással), vagy magasabb kategóriás szállást választhattok.</div>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.nhm-wien.ac.at/en" target="_blank" rel="noopener"><span class="ic">🦣</span><span class="lt"><b>Naturhistorisches Museum</b><span>nhm-wien.ac.at</span></span></a>
+    <a href="https://www.technischesmuseum.at/en" target="_blank" rel="noopener"><span class="ic">⚙️</span><span class="lt"><b>Technisches Museum</b><span>technischesmuseum.at</span></span></a>
+    <a href="https://www.schoenbrunn.at/en" target="_blank" rel="noopener"><span class="ic">👑</span><span class="lt"><b>Schönbrunn kastély</b><span>schoenbrunn.at</span></span></a>
+    <a href="https://www.zoovienna.at/en" target="_blank" rel="noopener"><span class="ic">🦁</span><span class="lt"><b>Tiergarten (állatkert)</b><span>zoovienna.at</span></span></a>
+    <a href="https://www.haus-des-meeres.at/en" target="_blank" rel="noopener"><span class="ic">🐟</span><span class="lt"><b>Haus des Meeres</b><span>haus-des-meeres.at</span></span></a>
+    <a href="https://www.wienerriesenrad.com/en/" target="_blank" rel="noopener"><span class="ic">🎡</span><span class="lt"><b>Prater / Óriáskerék</b><span>wienerriesenrad.com</span></span></a>
+    <a href="https://www.belvedere.at/en" target="_blank" rel="noopener"><span class="ic">🖼️</span><span class="lt"><b>Belvedere (Klimt)</b><span>belvedere.at</span></span></a>
+    <a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><span class="ic">🛣️</span><span class="lt"><b>Osztrák matrica (ASFINAG)</b><span>asfinag.at</span></span></a>
+    <a href="https://www.findmeglutenfree.com/at/vienna" target="_blank" rel="noopener"><span class="ic">🌾</span><span class="lt"><b>Gluténmentes térkép</b><span>findmeglutenfree.com</span></span></a>
+  </div>
 </section>
 
 <!-- ============ ALPS + VIENNA ============ -->
@@ -414,7 +453,7 @@
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Hallstatt sóbánya &amp; falu</span><span class="day-tag">Történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallstatti sóbánya</span> — a világ legrégebbi sóbányája: föld alatti tó, bányászcsúszdák, 7000 éves bányászat nyomai. Korán indulj (zsúfolt lesz).</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallstatti sóbánya</span> — a világ legrégebbi sóbányája: föld alatti tó, bányászcsúszdák, 7000 éves bányászat nyomai. Korán indulj (zsúfolt lesz). <span class="note">⚠️ 2026-ban új siklót építenek — a bánya <b>2026. aug. 29-én nyit újra</b>. Június–augusztus eleji útra ellenőrizd a nyitást, vagy válaszd helyette a salzburgi Salzwelten / berchtesgadeni sóbányát!</span></span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Gosausee-tó séta a Dachstein tükörképével, vagy tavi hajózás.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Tavak &amp; császári nyár</span><span class="day-tag">Természet</span></div>
@@ -469,6 +508,18 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Ez a leggazdagabb „élménymix” — de ügyelj a pakolásra: 4 éj egy helyen az Alpokban, majd <b>egyszeri</b> átszállás Bécsbe. Így nem napi csomagolás. A Hallstatt-faluba reggel 9 előtt vagy 16 után menj — napközben zsúfolásig megtelik buszos csoportokkal.</div>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.dachstein-salzkammergut.com/en" target="_blank" rel="noopener"><span class="ic">🧊</span><span class="lt"><b>Dachstein / jégbarlang</b><span>dachstein-salzkammergut.com</span></span></a>
+    <a href="https://www.salzwelten.at/en/hallstatt" target="_blank" rel="noopener"><span class="ic">🧂</span><span class="lt"><b>Hallstatt sóbánya</b><span>salzwelten.at</span></span></a>
+    <a href="https://www.schafbergbahn.at/en" target="_blank" rel="noopener"><span class="ic">🚂</span><span class="lt"><b>Schafbergbahn</b><span>schafbergbahn.at</span></span></a>
+    <a href="https://www.kaiservilla.at" target="_blank" rel="noopener"><span class="ic">👑</span><span class="lt"><b>Kaiservilla (Bad Ischl)</b><span>kaiservilla.at</span></span></a>
+    <a href="https://www.hallstatt.net/en" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Hallstatt / régió info</b><span>hallstatt.net</span></span></a>
+    <a href="https://www.nhm-wien.ac.at/en" target="_blank" rel="noopener"><span class="ic">🦣</span><span class="lt"><b>Naturhistorisches Museum</b><span>nhm-wien.ac.at</span></span></a>
+    <a href="https://www.schoenbrunn.at/en" target="_blank" rel="noopener"><span class="ic">🏛️</span><span class="lt"><b>Schönbrunn</b><span>schoenbrunn.at</span></span></a>
+    <a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><span class="ic">🛣️</span><span class="lt"><b>Osztrák matrica</b><span>asfinag.at</span></span></a>
+  </div>
 </section>
 
 <!-- ============ MUNICH ============ -->
@@ -544,6 +595,19 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp &amp; őszinte figyelmeztetés</span>Ez a legnagyobb „wow”, de kimondom: a <b>~8 órás út</b> ütközik a „ne kelljen sokat utazni” kéréseddel, és a <b>Zugspitze önmagában ~200 €</b> 3 főnek. Ha a budget szorít, hagyd el a Zugspitzét (a Partnachklamm szurdok a tört részéért hasonlóan látványos) — így marad bőven tartalék. 10 napra ez a terv <b>nem</b> fér bele a keretbe; 7 nap az ideális.</div>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.deutsches-museum.de/en" target="_blank" rel="noopener"><span class="ic">🔬</span><span class="lt"><b>Deutsches Museum</b><span>deutsches-museum.de</span></span></a>
+    <a href="https://www.neuschwanstein.de/englisch/tourist/" target="_blank" rel="noopener"><span class="ic">🏰</span><span class="lt"><b>Neuschwanstein jegyek</b><span>neuschwanstein.de</span></span></a>
+    <a href="https://zugspitze.de/en" target="_blank" rel="noopener"><span class="ic">🚠</span><span class="lt"><b>Zugspitze</b><span>zugspitze.de</span></span></a>
+    <a href="https://www.salzbergwerk.de/en" target="_blank" rel="noopener"><span class="ic">🧂</span><span class="lt"><b>Berchtesgaden sóbánya</b><span>salzbergwerk.de</span></span></a>
+    <a href="https://www.seenschifffahrt.de/en/koenigssee" target="_blank" rel="noopener"><span class="ic">⛵</span><span class="lt"><b>Königssee hajó</b><span>seenschifffahrt.de</span></span></a>
+    <a href="https://www.bmw-welt.com/en.html" target="_blank" rel="noopener"><span class="ic">🚗</span><span class="lt"><b>BMW Welt &amp; Museum</b><span>bmw-welt.com</span></span></a>
+    <a href="https://www.gapa-tourismus.de/en" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Garmisch / Partnachklamm</b><span>gapa-tourismus.de</span></span></a>
+    <a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><span class="ic">🛣️</span><span class="lt"><b>Osztrák matrica (átutazás)</b><span>asfinag.at</span></span></a>
+    <a href="https://www.findmeglutenfree.com/de/munich" target="_blank" rel="noopener"><span class="ic">🌾</span><span class="lt"><b>Gluténmentes térkép</b><span>findmeglutenfree.com</span></span></a>
+  </div>
 </section>
 
 <!-- ============ ICELAND ============ -->
@@ -647,6 +711,144 @@
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Ha Izland a cél, inkább <b>halaszd egy nagyobb büdzsés évre</b>, és akkor csináld rendesen (7+ nap, nyugodt tempó) — a kapkodós, túl olcsóra húzott izlandi út pont a lényeget veszíti el. Nyáron a <b>21–22 órás nappali fény</b> miatt rugalmas a program (késő esti vízeséseknél alig van tömeg), viszont <b>északi fény nyáron nincs</b> — azt csak szept.–márc. között látni.</div>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.bluelagoon.com" target="_blank" rel="noopener"><span class="ic">💧</span><span class="lt"><b>Blue Lagoon</b><span>bluelagoon.com</span></span></a>
+    <a href="https://www.skylagoon.com" target="_blank" rel="noopener"><span class="ic">♨️</span><span class="lt"><b>Sky Lagoon</b><span>skylagoon.com</span></span></a>
+    <a href="https://perlan.is" target="_blank" rel="noopener"><span class="ic">🧊</span><span class="lt"><b>Perlan (Wonders of Iceland)</b><span>perlan.is</span></span></a>
+    <a href="https://www.thingvellir.is/en" target="_blank" rel="noopener"><span class="ic">🌋</span><span class="lt"><b>Þingvellir Nemzeti Park</b><span>thingvellir.is</span></span></a>
+    <a href="https://www.lavacentre.is" target="_blank" rel="noopener"><span class="ic">🔥</span><span class="lt"><b>Lava Centre (vulkánok)</b><span>lavacentre.is</span></span></a>
+    <a href="https://www.vatnajokulsthjodgardur.is/en" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Vatnajökull NP / Skaftafell</b><span>vatnajokulsthjodgardur.is</span></span></a>
+    <a href="https://www.visiticeland.com" target="_blank" rel="noopener"><span class="ic">🧭</span><span class="lt"><b>Visit Iceland (hivatalos)</b><span>visiticeland.com</span></span></a>
+    <a href="https://safetravel.is" target="_blank" rel="noopener"><span class="ic">⚠️</span><span class="lt"><b>SafeTravel (biztonság!)</b><span>safetravel.is</span></span></a>
+  </div>
+</section>
+
+<!-- ============ CANADA ============ -->
+<section class="panel" id="p-canada" role="tabpanel" aria-labelledby="t-canada" hidden>
+  <p class="p-eyebrow">6. terv · repülővel · bakancslistás</p>
+  <h2>Kanada — Kelet-Kanada körút</h2>
+  <p class="thesis">A nagy álom: Niagara-vízesés, világszínvonalú science- és természettudományi múzeumok, és négy karakteres nagyváros Torontótól a francia Québecig. Mindenből egyszerre — cserébe a legdrágább terv.</p>
+
+  <div class="callout" style="background:color-mix(in srgb,var(--crit) 10%,var(--card));border-color:color-mix(in srgb,var(--crit) 35%,var(--line))">
+    <span class="tip" style="color:var(--crit)">Fontos — jóval a kereten felül</span>
+    Ez a terv <b>a 3 400 €-s keret közel háromszorosa</b> (~8 500–9 500 € 3 főre, 11 napra) — bakancslistás álomút, nem erre a nyárra reális. Kérésre dolgoztam ki, hogy legyen összehasonlítási alap és egy jövőbeli cél.
+  </div>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Utazás</p><p class="v">~9 ó <small>direkt repülő BUD→YYZ</small></p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">11 nap <small>/ 10 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v" style="color:var(--crit)">~9 000 €</p></div>
+    <div class="stat"><p class="k">Beutazás</p><p class="v">eTA <small>kötelező · 7 CAD</small></p></div>
+  </div>
+
+  <h3>Napról napra <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(Toronto → Niagara → Ottawa → Montréal → Québec)</small></h3>
+  <div class="days">
+    <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Repülés Torontóba</span><span class="day-tag">Jetlag-nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what">Direkt járat Budapestről (Air Canada / Lufthansa / United, ~9 óra). A −6 órás időeltolódás miatt még aznap délután megérkeztek. <span class="note">Könnyű nyitónap — semmi fókuszt igénylő program.</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Beköltözés Torontóban, séta a Harbourfronton.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Toronto — magasból &amp; víz alatt</span><span class="day-tag">Város</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">CN Tower</span> — üvegpadló, SkyTerrace panoráma (~43 CAD felnőtt).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Ripley's Aquarium of Canada</span> (a torony tövében) vagy <span class="anchor">Ontario Science Centre</span> (interaktív science). <span class="note">A Science Centre ideiglenesen a Harbourfront Centre-ben működik — ellenőrizd a helyszínt!</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Toronto — múzeum &amp; kastély</span><span class="day-tag">Science + történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Royal Ontario Museum (ROM)</span> — Kanada legnagyobb múzeuma: dínók, ásványok, világkultúra (~26 CAD).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Casa Loma</span> gótikus kastély + <span class="anchor">Kensington Market</span> (gluténmentes helyek). <span class="note">Tipp: a Toronto CityPASS több látnivalót egybe csomagol.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Niagara-vízesés</span><span class="day-tag">Természeti wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Niagara City Cruises — Voyage to the Falls</span>: hajóval a patkó-vízesés permetébe (~1,5 óra Torontóból). Journey Behind the Falls, White Water Walk.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">A kivilágított vízesés, majd vissza Torontóba (vagy éjszaka Niagarán).</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Toronto → Ezer-sziget → Ottawa</span><span class="day-tag">Utazás</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Indulás kelet felé. Megálló Gananoque-nál: <span class="anchor">Thousand Islands hajótúra</span> a Szent Lőrinc-folyón.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Tovább Ottawába (~a teljes nap ~4 óra autóval). Beköltözés.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Ottawa — főváros &amp; dínók</span><span class="day-tag">Science + történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Parliament Hill</span> — a kanadai parlament, őrségváltás.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Canadian Museum of Nature</span> — dinoszauruszok, ásványok, kékbálna-csontváz (kastélyszerű épület). <span class="gf">ByWard Market — GF éttermek.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Ottawa technika → Montréal</span><span class="day-tag">Science + utazás</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Canada Science and Technology Museum</span> (Ingenium) — mozdonyok, űrtechnika, interaktív kísérletek.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Átutazás Montréalba (~2 óra). Esti séta a belvárosban.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">8</span><span class="day-title">Montréal — ökoszisztémák</span><span class="day-tag">Science</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Biodôme (Space for Life)</span> — 5 amerikai ökoszisztéma egy tető alatt (esőerdő, Szt. Lőrinc-öböl, sarkvidék). Mellette Planetárium.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Vieux-Montréal</span> (óváros), Notre-Dame bazilika, Mont Royal kilátó.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">9</span><span class="day-title">Montréal — város &amp; tudomány</span><span class="day-tag">Város</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Montréal Science Centre a régi kikötőben (interaktív), vagy Botanikus kert + Insectarium.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Plateau negyed, Jean-Talon piac. <span class="gf">Montréal remek gluténmentes kínálattal.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">10</span><span class="day-title">Québec City — a francia óváros</span><span class="day-tag">Történelem (UNESCO)</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Vieux-Québec</span> (UNESCO) — Château Frontenac, a fallal körülvett óváros, Petit-Champlain utca. Útba esik a <span class="anchor">Montmorency-vízesés</span> (magasabb, mint a Niagara!). <span class="note">~3 óra Montréalból; vagy maradjatok ott éjszakára.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">11</span><span class="day-title">Hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what">Repülő haza Montréalból (YUL) — érdemes „open-jaw” jegyet venni (Torontóba be, Montréalból ki), hogy ne kelljen visszamenni. <span class="note">A +6 órás időeltolódással másnap érkeztek.</span></span></div>
+      </div></div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 11 nap, középkategória)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Repjegy BUD↔Kanada (3 fő, open-jaw)</td><td class="num">2 700</td><td>Nyári direkt járat, ~900 €/fő</td></tr>
+      <tr><td>eTA (3 fő)</td><td class="num">15</td><td>7 CAD/fő, 5 évig érvényes</td></tr>
+      <tr><td>Bérautó (10 nap) + üzemanyag</td><td class="num">1 100</td><td>Vagy vonat/busz a városok között</td></tr>
+      <tr><td>Szállás (10 éj)</td><td class="num">1 900</td><td>Toronto/Montréal drága, ~190 €/éj</td></tr>
+      <tr><td>Étkezés (11 nap, GF)</td><td class="num">1 450</td><td>+ borravaló-kultúra (15–20%)</td></tr>
+      <tr><td>Belépők / hajók / múzeumok</td><td class="num">1 000</td><td>CN Tower, Niagara, múzeumok, Ezer-sziget</td></tr>
+      <tr><td>Parkolás, apró, tartalék</td><td class="num">350</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~8 500–9 500</td><td style="color:var(--crit)">A keret ~2,5–2,8-szerese</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Hogyan faragható le a költség?</h3>
+  <ul class="clean">
+    <li><b>Csak Ontario</b> (Toronto + Niagara + Ottawa, Québec nélkül) → 7 nap, rövidebb távok, kevesebb szállás.</li>
+    <li><b>Vonat autó helyett</b> (VIA Rail Toronto–Ottawa–Montréal) — a városokban amúgy sem kell autó, csak Niagarához/Ezer-szigethez.</li>
+    <li><b>Toronto CityPASS</b> — a nagy látnivalókat csomagban olcsóbban.</li>
+    <li><b>Sok ingyenes</b>: Parliament Hill, Mont Royal, Vieux-Québec séta, Montmorency park alul.</li>
+    <li><b>Apartman + önellátás</b> a drága éttermek helyett (Kanada GF-barát, a boltok jól jelölnek).</li>
+  </ul>
+
+  <h3>Előre foglalni &amp; intézni</h3>
+  <ul class="clean">
+    <li><b>eTA</b> — a repjegy után azonnal, a hivatalos canada.ca oldalon (ne fizetős közvetítőn!). <span class="deadline">Indulás előtt, pár perc.</span></li>
+    <li><b>Repjegy</b> — a legnagyobb tétel, nyárra korán. <span class="deadline">4–6 hónappal előre.</span></li>
+    <li><b>Niagara City Cruises</b> + <b>CN Tower</b> — időpontos jegy a sor ellen.</li>
+    <li><b>Útlevél</b> — a beutazástól számított érvényesség; ellenőrizd a 6 hónapos szabályt.</li>
+  </ul>
+
+  <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
+  <div class="linkgrid">
+    <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html" target="_blank" rel="noopener"><span class="ic">🛂</span><span class="lt"><b>eTA (hivatalos!)</b><span>canada.ca</span></span></a>
+    <a href="https://www.cntower.ca" target="_blank" rel="noopener"><span class="ic">🗼</span><span class="lt"><b>CN Tower</b><span>cntower.ca</span></span></a>
+    <a href="https://www.rom.on.ca" target="_blank" rel="noopener"><span class="ic">🦕</span><span class="lt"><b>Royal Ontario Museum</b><span>rom.on.ca</span></span></a>
+    <a href="https://www.ontariosciencecentre.ca" target="_blank" rel="noopener"><span class="ic">🔬</span><span class="lt"><b>Ontario Science Centre</b><span>ontariosciencecentre.ca</span></span></a>
+    <a href="https://www.niagaraparks.com" target="_blank" rel="noopener"><span class="ic">💦</span><span class="lt"><b>Niagara Parks</b><span>niagaraparks.com</span></span></a>
+    <a href="https://www.niagaracitycruises.com" target="_blank" rel="noopener"><span class="ic">⛴️</span><span class="lt"><b>Niagara City Cruises</b><span>niagaracitycruises.com</span></span></a>
+    <a href="https://nature.ca/en/" target="_blank" rel="noopener"><span class="ic">🦖</span><span class="lt"><b>Canadian Museum of Nature</b><span>nature.ca</span></span></a>
+    <a href="https://ingeniumcanada.org/scitech" target="_blank" rel="noopener"><span class="ic">🚂</span><span class="lt"><b>Science &amp; Technology Museum</b><span>ingeniumcanada.org</span></span></a>
+    <a href="https://espacepourlavie.ca/en/biodome" target="_blank" rel="noopener"><span class="ic">🌿</span><span class="lt"><b>Biodôme (Space for Life)</b><span>espacepourlavie.ca</span></span></a>
+    <a href="https://www.quebec-cite.com/en" target="_blank" rel="noopener"><span class="ic">⚜️</span><span class="lt"><b>Québec City (hivatalos)</b><span>quebec-cite.com</span></span></a>
+    <a href="https://www.citypass.com/toronto" target="_blank" rel="noopener"><span class="ic">🎟️</span><span class="lt"><b>Toronto CityPASS</b><span>citypass.com</span></span></a>
+    <a href="https://ottawatourism.ca" target="_blank" rel="noopener"><span class="ic">🍁</span><span class="lt"><b>Ottawa Tourism</b><span>ottawatourism.ca</span></span></a>
+  </div>
+
+  <div class="callout"><span class="tip">Insider tipp</span>Vedd <b>„open-jaw” repjegyet</b> (Torontóba érkezés, Montréalból hazaút) — így a körutat nem kell visszafelé megismételni, és egy teljes napot spóroltok. Az <b>eTA-t kizárólag a hivatalos canada.ca oldalon</b> intézd (7 CAD) — rengeteg fizetős átverő-oldal van, amelyek sokszorosát kérik ugyanazért.</div>
 </section>
 
 </main>
