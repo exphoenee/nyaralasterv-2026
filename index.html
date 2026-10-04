@@ -118,6 +118,11 @@
   .block .when{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;padding-top:3px}
   .block .what{font-size:.95rem}
   .block .what .anchor{font-weight:650}
+  .block .what a.anchor,.what a.anchor{color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);transition:border-color .15s}
+  a.anchor:hover{border-bottom-color:var(--accent)}
+  a.anchor::after{content:"↗";font-size:.68em;vertical-align:super;margin-left:1px;opacity:.65}
+  a.anchor:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:2px}
   .note{font-size:.85rem;color:var(--ink-soft)}
   .gf{color:var(--accent);font-weight:600}
 
@@ -259,21 +264,21 @@
       <div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; Temze-part</span><span class="day-tag">Laza nap</span></div>
       <div class="blocks">
         <div class="block"><span class="when">Nappal</span><span class="what">Repülő Budapestről (Wizz/Ryanair), transzfer a szállásra (Zone 2 — pl. Paddington vagy Victoria környéke, U-Bahn-közeli). Beköltözés, Oyster-kártyák beállítása.</span></div>
-        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">South Bank-i séta a Temze mentén</span> — London Eye, Big Ben a túlparton. Könnyű nyitónap. <span class="note">Backup: ha késik a gép, csak a környék + korai pihenés.</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=South%20Bank-i%20s%C3%A9ta%20a%20Temze%20ment%C3%A9n" target="_blank" rel="noopener">South Bank-i séta a Temze mentén</a> — London Eye, Big Ben a túlparton. Könnyű nyitónap. <span class="note">Backup: ha késik a gép, csak a környék + korai pihenés.</span></span></div>
       </div>
     </div>
     <div class="day">
       <div class="day-head"><span class="day-num">2</span><span class="day-title">South Kensington — a science-nap</span><span class="day-tag">Múzeum</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Natural History Museum</span> <span class="pill free">INGYEN</span> — dínócsontvázak, kék bálna, földrengés-szimulátor. Nyit 10:00. (Nyáron/hétvégén foglalj ingyenes idősávot.)</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Science Museum</span> <span class="pill free">INGYEN</span> — 50 méterre: űrhajózás, gépek, interaktív termek. Tini-mágnes.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.nhm.ac.uk" target="_blank" rel="noopener">Natural History Museum</a> <span class="pill free">INGYEN</span> — dínócsontvázak, kék bálna, földrengés-szimulátor. Nyit 10:00. (Nyáron/hétvégén foglalj ingyenes idősávot.)</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.sciencemuseum.org.uk" target="_blank" rel="noopener">Science Museum</a> <span class="pill free">INGYEN</span> — 50 méterre: űrhajózás, gépek, interaktív termek. Tini-mágnes.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Hyde Park séta. <span class="gf">GF: CERU (South Kensington)</span> — mediterrán, gluténmentes-barát. <span class="note">Esős napra tökéletes: mindkettő fedett.</span></span></div>
       </div>
     </div>
     <div class="day">
       <div class="day-head"><span class="day-num">3</span><span class="day-title">British Museum &amp; West End</span><span class="day-tag">Történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">British Museum</span> <span class="pill free">INGYEN</span> — Rosetta-kő, egyiptomi múmiák, görög kincsek. Világtörténelem egy épületben.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.britishmuseum.org" target="_blank" rel="noopener">British Museum</a> <span class="pill free">INGYEN</span> — Rosetta-kő, egyiptomi múmiák, görög kincsek. Világtörténelem egy épületben.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Covent Garden, utcai előadók, Chinatown, Soho séta.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Opcionális West End musical. <span class="gf">GF: Niche (Islington) vagy Indigo (Covent Garden) — 100% gluténmentes.</span></span></div>
       </div>
@@ -281,15 +286,15 @@
     <div class="day">
       <div class="day-head"><span class="day-num">4</span><span class="day-title">Tower &amp; Greenwich</span><span class="day-tag">Vár + csillagászat</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Tower of London + Tower Bridge</span> — koronaékszerek, ezeréves erőd (~£35 felnőtt, online olcsóbb).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what">Temze-hajó Greenwichbe → <span class="anchor">Royal Observatory</span> — a kezdő hosszúsági kör, csillagászat, idő-galéria. <span class="note">Figyelem: 2026. nov. 2-tól felújítás miatt zár — nyáron nyitva.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.hrp.org.uk/tower-of-london" target="_blank" rel="noopener">Tower of London + Tower Bridge</a> — koronaékszerek, ezeréves erőd (~£35 felnőtt, online olcsóbb).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Temze-hajó Greenwichbe → <a class="anchor" href="https://www.rmg.co.uk/royal-observatory" target="_blank" rel="noopener">Royal Observatory</a> — a kezdő hosszúsági kör, csillagászat, idő-galéria. <span class="note">Figyelem: 2026. nov. 2-tól felújítás miatt zár — nyáron nyitva.</span></span></div>
         <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Wicked Fish (Spitalfields) — dedikált gluténmentes fish &amp; chips.</span></span></div>
       </div>
     </div>
     <div class="day">
       <div class="day-head"><span class="day-num">5</span><span class="day-title">Westminster / Harry Potter stúdió</span><span class="day-tag">Wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Opció A</span><span class="what"><span class="anchor">Warner Bros Studio — The Making of Harry Potter</span> (~£53/fő, a város szélén, ~fél-egész nap). Ha a tini rajongó, ez a „nagy élmény”. <span class="deadline">Hetekkel előre elkel!</span></span></div>
+        <div class="block"><span class="when">Opció A</span><span class="what"><a class="anchor" href="https://www.wbstudiotour.co.uk" target="_blank" rel="noopener">Warner Bros Studio — The Making of Harry Potter</a> (~£53/fő, a város szélén, ~fél-egész nap). Ha a tini rajongó, ez a „nagy élmény”. <span class="deadline">Hetekkel előre elkel!</span></span></div>
         <div class="block"><span class="when">Opció B</span><span class="what">Westminster (Parliament, Big Ben kívülről), Westminster Abbey vagy Churchill War Rooms (II. világháborús bunker), St. Paul-székesegyház.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Camden Market vagy Soho. <span class="gf">GF: Pho (Coeliac UK-akkreditált) vagy Los Mochis (100% GF).</span></span></div>
       </div>
@@ -297,7 +302,7 @@
     <div class="day">
       <div class="day-head"><span class="day-num">6</span><span class="day-title">Borough Market &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Borough Market</span> — gluténmentes standok, utolsó kóstolók, ajándékok.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://boroughmarket.org.uk" target="_blank" rel="noopener">Borough Market</a> — gluténmentes standok, utolsó kóstolók, ajándékok.</span></div>
         <div class="block"><span class="when">Nappal</span><span class="what">Transzfer a reptérre, repülő haza. <span class="note">Hagyj 3 órát a check-inre.</span></span></div>
       </div>
     </div>
@@ -359,33 +364,33 @@
     <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; belváros</span><span class="day-tag">Laza nap</span></div>
       <div class="blocks">
         <div class="block"><span class="when">Nappal</span><span class="what">Autóút Pécsről (osztrák matrica kell!). Szállás a belvároson kívül, U-Bahn mellett — az autó marad, minden metróval.</span></div>
-        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Stephansdom &amp; Graben séta</span>, első bécsi vacsora.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><a class="anchor" href="https://www.stephanskirche.at" target="_blank" rel="noopener">Stephansdom &amp; Graben séta</a>, első bécsi vacsora.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Naturhistorisches Museum</span><span class="day-tag">Science</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Naturhistorisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok, a 29 000 éves Willendorfi Vénusz. Hatalmas gyűjtemény.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.nhm-wien.ac.at/en" target="_blank" rel="noopener">Naturhistorisches Museum</a> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok, a 29 000 éves Willendorfi Vénusz. Hatalmas gyűjtemény.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">MuseumsQuartier hangulat. <span class="gf">GF: Gasthaus Zum Wohl — dedikált gluténmentes Wiener Schnitzel!</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Schönbrunn</span><span class="day-tag">Történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schönbrunn kastély + kert</span> — a Habsburgok nyári rezidenciája (online időpont).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what">A kertben a <span class="anchor">Tiergarten</span> — a világ legrégebbi, ma is működő állatkertje. Vagy Gloriette-kilátó.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.schoenbrunn.at/en" target="_blank" rel="noopener">Schönbrunn kastély + kert</a> — a Habsburgok nyári rezidenciája (online időpont).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">A kertben a <a class="anchor" href="https://www.zoovienna.at/en" target="_blank" rel="noopener">Tiergarten</a> — a világ legrégebbi, ma is működő állatkertje. Vagy Gloriette-kilátó.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Hofburg negyed sétája.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Technika &amp; tenger</span><span class="day-tag">Science</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Technisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — interaktív technika, közlekedés, energia.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Haus des Meeres</span> — akvárium egy háborús bunkertoronyban, tetőterasz panorámával (~9,80 € tininek).</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.technischesmuseum.at/en" target="_blank" rel="noopener">Technisches Museum</a> <span class="pill free">19 ALATT INGYEN</span> — interaktív technika, közlekedés, energia.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.haus-des-meeres.at/en" target="_blank" rel="noopener">Haus des Meeres</a> — akvárium egy háborús bunkertoronyban, tetőterasz panorámával (~9,80 € tininek).</span></div>
         <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Pizzeria Scarabocchio — külön GF konyha és kőkemence.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Prater &amp; Belvedere</span><span class="day-tag">Élmény</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Prater</span> — óriáskerék (Riesenrad) és hullámvasutak. Tini-kedvenc.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.wienerriesenrad.com/en/" target="_blank" rel="noopener">Prater</a> — óriáskerék (Riesenrad) és hullámvasutak. Tini-kedvenc.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Belvedere (Klimt: A csók) vagy Donau-parti séta.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Naschmarkt &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Naschmarkt</span> — piac, gluténmentes standok, utolsó falatok.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Naschmarkt" target="_blank" rel="noopener">Naschmarkt</a> — piac, gluténmentes standok, utolsó falatok.</span></div>
         <div class="block"><span class="when">Nappal</span><span class="what">Autóút haza (~4,5 óra).</span></div>
       </div></div>
   </div>
@@ -444,41 +449,41 @@
     <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Pécs → Salzkammergut</span><span class="day-tag">Utazás</span></div>
       <div class="blocks">
         <div class="block"><span class="when">Nappal</span><span class="what">Autóút a tóvidékre (Obertraun/Bad Ischl környéke, ~5,5 óra, osztrák matrica). Beköltözés alpesi apartmanba.</span></div>
-        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Séta a Hallstätter See partján.</span> Laza nyitónap.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=S%C3%A9ta%20a%20Hallst%C3%A4tter%20See%20partj%C3%A1n." target="_blank" rel="noopener">Séta a Hallstätter See partján.</a> Laza nyitónap.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Dachstein</span><span class="day-tag">Science-wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Dachstein Krippenstein — Óriás-jégbarlang + Mammut-barlang</span> felvonóval, fent az <span class="anchor">5 Fingers</span> kilátóplatform. All-in-One jegy. Jéggel borított barlangrendszer nyáron — leejtett áll garantált.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.dachstein-salzkammergut.com/en" target="_blank" rel="noopener">Dachstein Krippenstein — Óriás-jégbarlang + Mammut-barlang</a> felvonóval, fent az <a class="anchor" href="https://www.dachstein-salzkammergut.com/en" target="_blank" rel="noopener">5 Fingers</a> kilátóplatform. All-in-One jegy. Jéggel borított barlangrendszer nyáron — leejtett áll garantált.</span></div>
         <div class="block"><span class="when">Megj.</span><span class="what"><span class="note">Backup eső esetén: Hallstatti sóbánya (fedett) — cseréld a 3. nappal.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Hallstatt sóbánya &amp; falu</span><span class="day-tag">Történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallstatti sóbánya</span> — a világ legrégebbi sóbányája: föld alatti tó, bányászcsúszdák, 7000 éves bányászat nyomai. Korán indulj (zsúfolt lesz). <span class="note">⚠️ 2026-ban új siklót építenek — a bánya <b>2026. aug. 29-én nyit újra</b>. Június–augusztus eleji útra ellenőrizd a nyitást, vagy válaszd helyette a salzburgi Salzwelten / berchtesgadeni sóbányát!</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.salzwelten.at/en/hallstatt" target="_blank" rel="noopener">Hallstatti sóbánya</a> — a világ legrégebbi sóbányája: föld alatti tó, bányászcsúszdák, 7000 éves bányászat nyomai. Korán indulj (zsúfolt lesz). <span class="note">⚠️ 2026-ban új siklót építenek — a bánya <b>2026. aug. 29-én nyit újra</b>. Június–augusztus eleji útra ellenőrizd a nyitást, vagy válaszd helyette a salzburgi Salzwelten / berchtesgadeni sóbányát!</span></span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Gosausee-tó séta a Dachstein tükörképével, vagy tavi hajózás.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Tavak &amp; császári nyár</span><span class="day-tag">Természet</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schafbergbahn</span> fogaskerekű a Wolfgangsee fölé — alpesi panoráma.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.schafbergbahn.at/en" target="_blank" rel="noopener">Schafbergbahn</a> fogaskerekű a Wolfgangsee fölé — alpesi panoráma.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Bad Ischl — Sisi és Ferenc József nyári villája (Kaiservilla). Pakolás az átszálláshoz.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Átszállás Bécsbe</span><span class="day-tag">Utazás</span></div>
       <div class="blocks">
         <div class="block"><span class="when">Nappal</span><span class="what">Salzkammergut → Bécs (~2,5 óra). Beköltözés (U-Bahn mellett).</span></div>
-        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Stephansdom &amp; Graben</span>. <span class="gf">GF: Gasthaus Zum Wohl (GF schnitzel).</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><a class="anchor" href="https://www.stephanskirche.at" target="_blank" rel="noopener">Stephansdom &amp; Graben</a>. <span class="gf">GF: Gasthaus Zum Wohl (GF schnitzel).</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Naturhistorisches Museum</span><span class="day-tag">Science</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Naturhistorisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok. Délután MuseumsQuartier.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.nhm-wien.ac.at/en" target="_blank" rel="noopener">Naturhistorisches Museum</a> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok. Délután MuseumsQuartier.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Schönbrunn + állatkert</span><span class="day-tag">Történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schönbrunn kastély + kert</span>.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.schoenbrunn.at/en" target="_blank" rel="noopener">Schönbrunn kastély + kert</a>.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Tiergarten (legrégebbi állatkert) vagy Gloriette.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">8</span><span class="day-title">Technika &amp; Prater</span><span class="day-tag">Élmény</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Technisches Museum</span> <span class="pill free">INGYEN 19 alatt</span> vagy Haus des Meeres.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Prater</span> — óriáskerék, hullámvasutak. <span class="gf">GF: Pizzeria Scarabocchio.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.technischesmuseum.at/en" target="_blank" rel="noopener">Technisches Museum</a> <span class="pill free">INGYEN 19 alatt</span> vagy Haus des Meeres.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.wienerriesenrad.com/en/" target="_blank" rel="noopener">Prater</a> — óriáskerék, hullámvasutak. <span class="gf">GF: Pizzeria Scarabocchio.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">9</span><span class="day-title">Naschmarkt &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
       <div class="blocks">
@@ -544,28 +549,28 @@
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Deutsches Museum</span><span class="day-tag">Science-wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Deutsches Museum</span> — a világ <b>legnagyobb</b> tudományos-technikai múzeuma: bányászat, repülés, űrhajózás, elektromosság (családi jegy ~33 €). Egy science-rajongó tininek itt egy nap is kevés.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.deutsches-museum.de/en" target="_blank" rel="noopener">Deutsches Museum</a> — a világ <b>legnagyobb</b> tudományos-technikai múzeuma: bányászat, repülés, űrhajózás, elektromosság (családi jegy ~33 €). Egy science-rajongó tininek itt egy nap is kevés.</span></div>
         <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Mixto Verde (GF pizza/tészta) vagy Palmtreeclub (dedikált GF).</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">München város</span><span class="day-tag">Város</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what">Marienplatz, Residenz vagy <span class="anchor">BMW Welt &amp; Museum</span> (tini-mágnes, ingyenes belépő a Weltbe).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Englischer Garten</span> — nézd a folyami szörfösöket az Eisbachon! <span class="note">Backup eső: Pinakothek / Residenz.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Marienplatz, Residenz vagy <a class="anchor" href="https://www.bmw-welt.com/en.html" target="_blank" rel="noopener">BMW Welt &amp; Museum</a> (tini-mágnes, ingyenes belépő a Weltbe).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Englischer%20Garten" target="_blank" rel="noopener">Englischer Garten</a> — nézd a folyami szörfösöket az Eisbachon! <span class="note">Backup eső: Pinakothek / Residenz.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">München → Garmisch + Neuschwanstein</span><span class="day-tag">Mesekastély</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Neuschwanstein kastély</span> — a Disney-kastély ihletője (időpontos jegy <b>kötelező</b>, ~21 €/fő). Marienbrücke a legszebb fotóhoz.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.neuschwanstein.de/englisch/tourist/" target="_blank" rel="noopener">Neuschwanstein kastély</a> — a Disney-kastély ihletője (időpontos jegy <b>kötelező</b>, ~21 €/fő). Marienbrücke a legszebb fotóhoz.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Átállás a bajor-alpesi bázisra (Garmisch-Partenkirchen, ~1,5 óra).</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Zugspitze</span><span class="day-tag">Németország teteje</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Zugspitze (2962 m)</span> — fogaskerekű + gleccserkabin a csúcsra (~78 €/felnőtt, tini-kedvezmény — a terv legdrágább tétele). 360°-os alpesi panoráma.</span></div>
-        <div class="block"><span class="when">Backup</span><span class="what"><span class="note">Ha a csúcson köd/zárás van: <span class="anchor">Partnachklamm</span> szurdok (olcsó, látványos) + Eibsee-tó.</span></span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://zugspitze.de/en" target="_blank" rel="noopener">Zugspitze (2962 m)</a> — fogaskerekű + gleccserkabin a csúcsra (~78 €/felnőtt, tini-kedvezmény — a terv legdrágább tétele). 360°-os alpesi panoráma.</span></div>
+        <div class="block"><span class="when">Backup</span><span class="what"><span class="note">Ha a csúcson köd/zárás van: <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Partnachklamm" target="_blank" rel="noopener">Partnachklamm</a> szurdok (olcsó, látványos) + Eibsee-tó.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Berchtesgaden</span><span class="day-tag">Só + smaragdtó</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Berchtesgadeni sóbánya</span> — bányászcsúszdák, föld alatti tavak (~22 €/felnőtt).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Königssee</span> — elektromos hajó a smaragdzöld tavon a St. Bartholomä-kápolnához (~21 €). <span class="note">Hosszú nap — vagy maradj közel: Eibsee + Garmisch.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.salzbergwerk.de/en" target="_blank" rel="noopener">Berchtesgadeni sóbánya</a> — bányászcsúszdák, föld alatti tavak (~22 €/felnőtt).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.seenschifffahrt.de/en/koenigssee" target="_blank" rel="noopener">Königssee</a> — elektromos hajó a smaragdzöld tavon a St. Bartholomä-kápolnához (~21 €). <span class="note">Hosszú nap — vagy maradj közel: Eibsee + Garmisch.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Hazaút</span><span class="day-tag">Záró nap</span></div>
       <div class="blocks">
@@ -633,37 +638,37 @@
     <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; Blue Lagoon</span><span class="day-tag">Laza nap</span></div>
       <div class="blocks">
         <div class="block"><span class="when">Nappal</span><span class="what">Repülő Budapestről Keflavíkra, bérautó átvétele a reptéren. <span class="note">A hosszú nappali fény (nyáron ~21–22 óra világos!) miatt nincs valódi jetlag.</span></span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Blue Lagoon</span> — a geotermikus fürdő a reptér mellett van, tökéletes érkezős program (előre foglalt időpont kötelező, ~65–90 €/fő). Alternatíva: Sky Lagoon Reykjavík mellett.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.bluelagoon.com" target="_blank" rel="noopener">Blue Lagoon</a> — a geotermikus fürdő a reptér mellett van, tökéletes érkezős program (előre foglalt időpont kötelező, ~65–90 €/fő). Alternatíva: Sky Lagoon Reykjavík mellett.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Beköltözés Reykjavíkban / közelében.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Reykjavík &amp; Perlan</span><span class="day-tag">Science + város</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallgrímskirkja</span> templom + torony, színes óváros, kikötő.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Perlan — Wonders of Iceland</span>: valódi jégbarlang (beltéri!), vulkán- és földrengés-kiállítás, planetárium (északi fény show). Pont a tini science-érdeklődésére.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.hallgrimskirkja.is" target="_blank" rel="noopener">Hallgrímskirkja</a> templom + torony, színes óváros, kikötő.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://perlan.is" target="_blank" rel="noopener">Perlan — Wonders of Iceland</a>: valódi jégbarlang (beltéri!), vulkán- és földrengés-kiállítás, planetárium (északi fény show). Pont a tini science-érdeklődésére.</span></div>
         <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Reykjavík meglepően gluténmentes-barát; a boltokban (Bónus, Krónan) is jól jelölt kaja.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Golden Circle</span><span class="day-tag">Geológia-wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Þingvellir Nemzeti Park</span> — itt szakad szét az eurázsiai és az észak-amerikai kőzetlemez, a hasadékban sétálsz! (geológia + a történelmi parlament helye).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Geysir &amp; Strokkur</span> — a 5–10 percenként kitörő gejzír; majd <span class="anchor">Gullfoss</span> vízesés.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.thingvellir.is/en" target="_blank" rel="noopener">Þingvellir Nemzeti Park</a> — itt szakad szét az eurázsiai és az észak-amerikai kőzetlemez, a hasadékban sétálsz! (geológia + a történelmi parlament helye).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Geysir%20%26%20Strokkur" target="_blank" rel="noopener">Geysir &amp; Strokkur</a> — a 5–10 percenként kitörő gejzír; majd <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Gullfoss" target="_blank" rel="noopener">Gullfoss</a> vízesés.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Szállás Selfoss / Hella környékén. <span class="note">Backup: Kerið vulkáni krátertó útba ejtve.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Déli part — vízesések &amp; fekete homok</span><span class="day-tag">Természet</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Seljalandsfoss</span> (mögé lehet sétálni) és <span class="anchor">Skógafoss</span> vízesések. Útba esik a <span class="anchor">Lava Centre</span> (interaktív vulkán- és földrengés-múzeum Hvolsvöllurben — science).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Reynisfjara feketehomokos tengerpart</span> bazaltoszlopokkal + Vík. <span class="note">⚠️ A „sneaker wave” veszélyes — tartsd a biztonságos távolságot a víztől!</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Seljalandsfoss" target="_blank" rel="noopener">Seljalandsfoss</a> (mögé lehet sétálni) és <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Sk%C3%B3gafoss" target="_blank" rel="noopener">Skógafoss</a> vízesések. Útba esik a <a class="anchor" href="https://www.lavacentre.is" target="_blank" rel="noopener">Lava Centre</a> (interaktív vulkán- és földrengés-múzeum Hvolsvöllurben — science).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Reynisfjara%20feketehomokos%20tengerpart" target="_blank" rel="noopener">Reynisfjara feketehomokos tengerpart</a> bazaltoszlopokkal + Vík. <span class="note">⚠️ A „sneaker wave” veszélyes — tartsd a biztonságos távolságot a víztől!</span></span></div>
         <div class="block"><span class="when">Este</span><span class="what">Szállás Vík környékén.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Gleccserlagúna</span><span class="day-tag">Gleccser-wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Jökulsárlón gleccserlagúna</span> — úszó jéghegyek a tavon (hajótúra opció), majd szemben a <span class="anchor">Diamond Beach</span>: jégdarabok a fekete homokon. A túloldalon a Vatnajökull, Európa legnagyobb gleccsere.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://icelagoon.is" target="_blank" rel="noopener">Jökulsárlón gleccserlagúna</a> — úszó jéghegyek a tavon (hajótúra opció), majd szemben a <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Diamond%20Beach" target="_blank" rel="noopener">Diamond Beach</a>: jégdarabok a fekete homokon. A túloldalon a Vatnajökull, Európa legnagyobb gleccsere.</span></div>
         <div class="block"><span class="when">Útközben</span><span class="what">Skaftafell (Vatnajökull NP) — rövid túra a Svartifoss bazaltvízeséshez; gleccsertúra opció (vezetővel).</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Szállás Höfn / Skaftafell környékén.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Vissza nyugatra</span><span class="day-tag">Természet</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Fjaðrárgljúfur kanyon</span> — drámai zöld szurdok.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what">Opcionális <span class="anchor">Sólheimajökull gleccsertúra</span> (csákányos séta vezetővel — tini-kaland) vagy lazább visszaút.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Fja%C3%B0r%C3%A1rglj%C3%BAfur%20kanyon" target="_blank" rel="noopener">Fjaðrárgljúfur kanyon</a> — drámai zöld szurdok.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Opcionális <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimaj%C3%B6kull%20gleccsert%C3%BAra" target="_blank" rel="noopener">Sólheimajökull gleccsertúra</a> (csákányos séta vezetővel — tini-kaland) vagy lazább visszaút.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">Szállás Selfoss / Hveragerði környékén.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Geotermál &amp; Reykjavík</span><span class="day-tag">Záró élmény</span></div>
@@ -752,38 +757,38 @@
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Toronto — magasból &amp; víz alatt</span><span class="day-tag">Város</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">CN Tower</span> — üvegpadló, SkyTerrace panoráma (~43 CAD felnőtt).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Ripley's Aquarium of Canada</span> (a torony tövében) vagy <span class="anchor">Ontario Science Centre</span> (interaktív science). <span class="note">A Science Centre ideiglenesen a Harbourfront Centre-ben működik — ellenőrizd a helyszínt!</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.cntower.ca" target="_blank" rel="noopener">CN Tower</a> — üvegpadló, SkyTerrace panoráma (~43 CAD felnőtt).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.ripleyaquariums.com/canada" target="_blank" rel="noopener">Ripley's Aquarium of Canada</a> (a torony tövében) vagy <a class="anchor" href="https://www.ontariosciencecentre.ca" target="_blank" rel="noopener">Ontario Science Centre</a> (interaktív science). <span class="note">A Science Centre ideiglenesen a Harbourfront Centre-ben működik — ellenőrizd a helyszínt!</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Toronto — múzeum &amp; kastély</span><span class="day-tag">Science + történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Royal Ontario Museum (ROM)</span> — Kanada legnagyobb múzeuma: dínók, ásványok, világkultúra (~26 CAD).</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Casa Loma</span> gótikus kastély + <span class="anchor">Kensington Market</span> (gluténmentes helyek). <span class="note">Tipp: a Toronto CityPASS több látnivalót egybe csomagol.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://www.rom.on.ca" target="_blank" rel="noopener">Royal Ontario Museum (ROM)</a> — Kanada legnagyobb múzeuma: dínók, ásványok, világkultúra (~26 CAD).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://casaloma.ca" target="_blank" rel="noopener">Casa Loma</a> gótikus kastély + <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Kensington%20Market" target="_blank" rel="noopener">Kensington Market</a> (gluténmentes helyek). <span class="note">Tipp: a Toronto CityPASS több látnivalót egybe csomagol.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Niagara-vízesés</span><span class="day-tag">Természeti wow</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Niagara City Cruises — Voyage to the Falls</span>: hajóval a patkó-vízesés permetébe (~1,5 óra Torontóból). Journey Behind the Falls, White Water Walk.</span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.niagaracitycruises.com" target="_blank" rel="noopener">Niagara City Cruises — Voyage to the Falls</a>: hajóval a patkó-vízesés permetébe (~1,5 óra Torontóból). Journey Behind the Falls, White Water Walk.</span></div>
         <div class="block"><span class="when">Este</span><span class="what">A kivilágított vízesés, majd vissza Torontóba (vagy éjszaka Niagarán).</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Toronto → Ezer-sziget → Ottawa</span><span class="day-tag">Utazás</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what">Indulás kelet felé. Megálló Gananoque-nál: <span class="anchor">Thousand Islands hajótúra</span> a Szent Lőrinc-folyón.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Indulás kelet felé. Megálló Gananoque-nál: <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Thousand%20Islands%20haj%C3%B3t%C3%BAra" target="_blank" rel="noopener">Thousand Islands hajótúra</a> a Szent Lőrinc-folyón.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Tovább Ottawába (~a teljes nap ~4 óra autóval). Beköltözés.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Ottawa — főváros &amp; dínók</span><span class="day-tag">Science + történelem</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Parliament Hill</span> — a kanadai parlament, őrségváltás.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Canadian Museum of Nature</span> — dinoszauruszok, ásványok, kékbálna-csontváz (kastélyszerű épület). <span class="gf">ByWard Market — GF éttermek.</span></span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://visit.parl.ca" target="_blank" rel="noopener">Parliament Hill</a> — a kanadai parlament, őrségváltás.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://nature.ca/en/" target="_blank" rel="noopener">Canadian Museum of Nature</a> — dinoszauruszok, ásványok, kékbálna-csontváz (kastélyszerű épület). <span class="gf">ByWard Market — GF éttermek.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Ottawa technika → Montréal</span><span class="day-tag">Science + utazás</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Canada Science and Technology Museum</span> (Ingenium) — mozdonyok, űrtechnika, interaktív kísérletek.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://ingeniumcanada.org/scitech" target="_blank" rel="noopener">Canada Science and Technology Museum</a> (Ingenium) — mozdonyok, űrtechnika, interaktív kísérletek.</span></div>
         <div class="block"><span class="when">Délután</span><span class="what">Átutazás Montréalba (~2 óra). Esti séta a belvárosban.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">8</span><span class="day-title">Montréal — ökoszisztémák</span><span class="day-tag">Science</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Biodôme (Space for Life)</span> — 5 amerikai ökoszisztéma egy tető alatt (esőerdő, Szt. Lőrinc-öböl, sarkvidék). Mellette Planetárium.</span></div>
-        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Vieux-Montréal</span> (óváros), Notre-Dame bazilika, Mont Royal kilátó.</span></div>
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><a class="anchor" href="https://espacepourlavie.ca/en/biodome" target="_blank" rel="noopener">Biodôme (Space for Life)</a> — 5 amerikai ökoszisztéma egy tető alatt (esőerdő, Szt. Lőrinc-öböl, sarkvidék). Mellette Planetárium.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Vieux-Montr%C3%A9al" target="_blank" rel="noopener">Vieux-Montréal</a> (óváros), Notre-Dame bazilika, Mont Royal kilátó.</span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">9</span><span class="day-title">Montréal — város &amp; tudomány</span><span class="day-tag">Város</span></div>
       <div class="blocks">
@@ -792,7 +797,7 @@
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">10</span><span class="day-title">Québec City — a francia óváros</span><span class="day-tag">Történelem (UNESCO)</span></div>
       <div class="blocks">
-        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Vieux-Québec</span> (UNESCO) — Château Frontenac, a fallal körülvett óváros, Petit-Champlain utca. Útba esik a <span class="anchor">Montmorency-vízesés</span> (magasabb, mint a Niagara!). <span class="note">~3 óra Montréalból; vagy maradjatok ott éjszakára.</span></span></div>
+        <div class="block"><span class="when">Egész nap</span><span class="what"><a class="anchor" href="https://www.quebec-cite.com/en" target="_blank" rel="noopener">Vieux-Québec</a> (UNESCO) — Château Frontenac, a fallal körülvett óváros, Petit-Champlain utca. Útba esik a <a class="anchor" href="https://www.google.com/maps/search/?api=1&query=Montmorency-v%C3%ADzes%C3%A9s" target="_blank" rel="noopener">Montmorency-vízesés</a> (magasabb, mint a Niagara!). <span class="note">~3 óra Montréalból; vagy maradjatok ott éjszakára.</span></span></div>
       </div></div>
     <div class="day"><div class="day-head"><span class="day-num">11</span><span class="day-title">Hazaút</span><span class="day-tag">Záró nap</span></div>
       <div class="blocks">
@@ -898,6 +903,7 @@
   });
 })();
 </script>
+
 
 </body>
 </html>
