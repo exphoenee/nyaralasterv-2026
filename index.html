@@ -69,6 +69,11 @@
     border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.85rem;
     box-shadow:var(--shadow)}
   .chip b{font-weight:650}
+  .fxstatus{display:inline-flex;align-items:center;gap:7px;margin:16px 0 0;font-size:.8rem;
+    color:var(--ink-soft);background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;box-shadow:var(--shadow)}
+  .fxstatus .dot{width:7px;height:7px;border-radius:50%;background:var(--muted);flex:0 0 auto}
+  .fxstatus.live .dot{background:var(--good)}
 
   /* ---- Tabs ---- */
   .tabbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
@@ -216,6 +221,7 @@
       <span class="chip">💶 Keret: <b>max. 3 400 € (~1,2 M Ft)</b> · mindennel</span>
       <span class="chip">🌾 <b>Végig gluténmentes</b></span>
     </div>
+    <p id="fxStatus" class="fxstatus" hidden><span class="dot" aria-hidden="true"></span><span id="fxStatusText"></span></p>
   </div>
 </header>
 
@@ -1151,6 +1157,84 @@
     var onChange=function(){var s=null;try{s=localStorage.getItem(KEY);}catch(e){}if(s!=='dark'&&s!=='light')render();};
     if(mq.addEventListener)mq.addEventListener('change',onChange);else if(mq.addListener)mq.addListener(onChange);
   }
+})();
+
+/* Élő árfolyam: napi cache a localStorage-ban; ha aznapra már van adat, nem fetchel újra.
+   Offline / szigorú CSP esetén a beépített (fallback) árfolyamot használja. */
+(function(){
+  var KEY='nyaralasterv.fx';
+  var FALLBACK={HUF:355,GBP:0.855,ISK:150,CAD:1.48};
+  function today(){var d=new Date();function p(n){return (n<10?'0':'')+n;}return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());}
+  function grp(n){return Math.round(n).toLocaleString('hu-HU');}
+  function fmt(cur,v){
+    if(cur==='HUF')return v>=1000000?(v/1000000).toLocaleString('hu-HU',{minimumFractionDigits:1,maximumFractionDigits:1})+' M':grp(Math.round(v/1000)*1000);
+    if(cur==='GBP')return '£'+grp(v);
+    if(cur==='ISK')return grp(Math.round(v/1000)*1000);
+    if(cur==='CAD')return grp(v);
+    return grp(v);
+  }
+  function hufShort(v){return v>=1000000?(v/1000000).toLocaleString('hu-HU',{minimumFractionDigits:1,maximumFractionDigits:1})+' M Ft':Math.round(v/1000)+' e Ft';}
+  function parseAmounts(txt){
+    txt=(txt||'').replace(/ /g,' ').replace(/[€~]/g,'').replace(/\s/g,'');
+    if(!txt)return [];
+    return txt.split(/[–—-]/).map(function(s){return parseFloat(s.replace(/[^\d.]/g,''));}).filter(function(n){return !isNaN(n);});
+  }
+  function rate(rates,cur){return (rates&&rates[cur])||FALLBACK[cur];}
+  function apply(rates){
+    var tables=document.querySelectorAll('table');
+    // 1) Részletes költségbontó táblázatok (EUR fejléccel)
+    tables.forEach(function(tbl){
+      var head=tbl.tHead; if(!head||!head.rows.length)return;
+      var ths=head.rows[0].cells, eurIdx=-1, targets=[];
+      for(var i=0;i<ths.length;i++){var t=ths[i].textContent.toUpperCase();
+        if(t.indexOf('EUR')>=0)eurIdx=i;
+        else if(t.indexOf('GBP')>=0||t.indexOf('£')>=0)targets.push({i:i,cur:'GBP'});
+        else if(t.indexOf('HUF')>=0||t.indexOf('FT')>=0)targets.push({i:i,cur:'HUF'});
+        else if(t.indexOf('ISK')>=0)targets.push({i:i,cur:'ISK'});
+        else if(t.indexOf('CAD')>=0)targets.push({i:i,cur:'CAD'});
+      }
+      if(eurIdx<0||!targets.length||!tbl.tBodies.length)return;
+      var rows=tbl.tBodies[0].rows;
+      for(var r=0;r<rows.length;r++){var cells=rows[r].cells, ec=cells[eurIdx]; if(!ec)continue;
+        var base=parseAmounts(ec.textContent); if(!base.length)continue; var tilde=/~/.test(ec.textContent);
+        targets.forEach(function(tg){var cell=cells[tg.i]; if(!cell)return;
+          cell.textContent=(tilde?'~':'')+base.map(function(b){return fmt(tg.cur,b*rate(rates,tg.cur));}).join('–');});
+      }
+    });
+    // 2) Áttekintés tábla (költség cella <small> forint része)
+    tables.forEach(function(tbl){
+      var head=tbl.tHead; if(!head||!head.rows.length)return;
+      var ths=head.rows[0].cells, costIdx=-1;
+      for(var i=0;i<ths.length;i++){if(ths[i].textContent.toLowerCase().indexOf('költség')>=0)costIdx=i;}
+      if(costIdx<0||!tbl.tBodies.length)return;
+      var rows=tbl.tBodies[0].rows;
+      for(var r=0;r<rows.length;r++){var cell=rows[r].cells[costIdx]; if(!cell)continue;
+        var sm=cell.querySelector('small'); if(!sm)continue;
+        var et=cell.childNodes[0]?cell.childNodes[0].textContent:''; var base=parseAmounts(et); if(!base.length)continue;
+        var tilde=/~/.test(et);
+        sm.textContent=(tilde?'~':'')+base.map(function(b){return hufShort(b*rate(rates,'HUF'));}).join('–');
+      }
+    });
+  }
+  function status(live,date,rates){
+    var el=document.getElementById('fxStatus'), tx=document.getElementById('fxStatusText'); if(!el||!tx)return;
+    el.hidden=false;
+    if(live){el.classList.add('live');tx.textContent='Élő árfolyam · 1 € = '+Math.round(rate(rates,'HUF'))+' Ft · frissítve: '+date;}
+    else{el.classList.remove('live');tx.textContent='Becsült árfolyam (nincs élő adat) · 1 € ≈ '+FALLBACK.HUF+' Ft';}
+  }
+  var t=today(), cached=null;
+  try{cached=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  if(cached&&cached.date===t&&cached.rates&&cached.rates.HUF){apply(cached.rates);status(true,t,cached.rates);return;}
+  if(!window.fetch){apply(FALLBACK);status(false,t,FALLBACK);return;}
+  fetch('https://open.er-api.com/v6/latest/EUR')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var rates=d&&d.rates; if(!rates||!rates.HUF)throw 0;
+      var keep={HUF:rates.HUF,GBP:rates.GBP,ISK:rates.ISK,CAD:rates.CAD};
+      try{localStorage.setItem(KEY,JSON.stringify({date:t,rates:keep}));}catch(e){}
+      apply(keep);status(true,t,keep);
+    })
+    .catch(function(){apply(FALLBACK);status(false,t,FALLBACK);});
 })();
 </script>
 
