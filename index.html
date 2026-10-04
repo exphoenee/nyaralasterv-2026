@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Családi nyaralásterv 2026 — 6 úticél, Pécs kiindulással.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖</text></svg>">
 <title>Nyaralásterv 2026 — 4 úticél</title>
 <style>
   :root{
@@ -70,7 +71,15 @@
   /* ---- Tabs ---- */
   .tabbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
     backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:0}
-  .tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:thin}
+  .tabbar .wrap{display:flex;align-items:center;gap:12px}
+  .tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:thin;flex:1 1 auto;min-width:0}
+  .theme-toggle{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;background:var(--card);
+    border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 13px;cursor:pointer;
+    font-family:var(--sans);font-size:.85rem;font-weight:600;box-shadow:var(--shadow);transition:border-color .15s}
+  .theme-toggle:hover{border-color:var(--accent)}
+  .theme-toggle:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+  .theme-toggle .tlabel{white-space:nowrap}
+  @media (max-width:640px){.theme-toggle .tlabel{display:none}.theme-toggle{padding:8px 10px}}
   .tab{flex:0 0 auto;border:1px solid transparent;background:transparent;color:var(--ink-soft);
     font-family:var(--sans);font-size:.9rem;font-weight:600;padding:9px 16px;border-radius:999px;
     cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
@@ -146,6 +155,10 @@
   ul.clean li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
     border-radius:8px;padding:11px 15px;font-size:.93rem}
   ul.clean li b{font-weight:650}
+  ul.clean li a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}
+  ul.clean li a:hover{border-bottom-color:var(--accent)}
+  ul.clean li a::after{content:"↗";font-size:.68em;vertical-align:super;margin-left:1px;opacity:.6}
+  ul.clean li a:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:2px}
   .deadline{color:var(--amber);font-weight:700;font-size:.82rem}
   .callout{background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 35%,var(--line));
     border-radius:var(--radius);padding:16px 18px;margin-top:16px;font-size:.95rem}
@@ -182,6 +195,10 @@
 <body>
 
 
+<script>
+/* Korai témabeállítás a villogás elkerüléséért: a mentett user-beállítás felülírja a böngésző alapértelmezését */
+(function(){try{var t=localStorage.getItem('nyaralasterv.theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
 <header class="masthead">
   <div class="wrap">
     <p class="eyebrow">Családi nyaralásterv · Nyár 2026</p>
@@ -208,6 +225,7 @@
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-iceland"  id="t-iceland">🌋 Izland <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-canada"   id="t-canada">🍁 Kanada <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
     </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="tlabel" id="themeLabel">Sötét</span></button>
   </div>
 </div>
 
@@ -329,10 +347,10 @@
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
-    <li><b>Repjegy</b> — minél előbb, a nyári árak gyorsan emelkednek. <span class="deadline">2–4 hónappal előre.</span></li>
-    <li><b>Warner Bros Harry Potter stúdió</b> — rendszeresen elkel. <span class="deadline">Amint megvannak a dátumok.</span></li>
-    <li><b>Natural History &amp; Science Museum</b> — ingyenes idősáv-foglalás hétvégére/nyárra a hivatalos oldalon.</li>
-    <li><b>Tower of London</b> — online jegy olcsóbb és sorkerülő.</li>
+    <li><a href="https://www.skyscanner.net/transport/flights/bud/lond/" target="_blank" rel="noopener"><b>Repjegy</b></a> — minél előbb, a nyári árak gyorsan emelkednek. <span class="deadline">2–4 hónappal előre.</span></li>
+    <li><a href="https://www.wbstudiotour.co.uk" target="_blank" rel="noopener"><b>Warner Bros Harry Potter stúdió</b></a> — rendszeresen elkel. <span class="deadline">Amint megvannak a dátumok.</span></li>
+    <li><a href="https://www.nhm.ac.uk/visit/tickets.html" target="_blank" rel="noopener"><b>Natural History &amp; Science Museum</b></a> — ingyenes idősáv-foglalás hétvégére/nyárra a hivatalos oldalon.</li>
+    <li><a href="https://www.hrp.org.uk/tower-of-london/visit/tickets-and-prices/" target="_blank" rel="noopener"><b>Tower of London</b></a> — online jegy olcsóbb és sorkerülő.</li>
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>A három nagy múzeum ingyenessége miatt Londonban a pénzt a szállásra és egy-két fizetős „nagy” élményre (Tower, Harry Potter) érdemes csoportosítani — így egy kifejezetten drága város is belefér a keretbe. London egyben a világ egyik <b>legjobb gluténmentes városa</b>: szinte minden étteremnek van jelölt GF-menüje.</div>
@@ -367,6 +385,11 @@
     <a href="https://www.staycity.com/london/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Staycity Aparthotels</b><span>staycity.com</span></span></a>
     <a href="https://www.marlinapartments.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Marlin Apartments</b><span>marlinapartments.com</span></span></a>
     <a href="https://www.nativeplaces.com/locations/london/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Native Places (apartman)</b><span>nativeplaces.com</span></span></a>
+    <a href="https://www.plumguide.com/s/london" target="_blank" rel="noopener"><span class="ic">⭐</span><span class="lt"><b>Plum Guide (válogatott)</b><span>plumguide.com</span></span></a>
+    <a href="https://homes-and-villas.marriott.com/en/vacation-rentals/united-kingdom/london" target="_blank" rel="noopener"><span class="ic">🏨</span><span class="lt"><b>Marriott Homes &amp; Villas</b><span>marriott.com</span></span></a>
+    <a href="https://www.chevalcollection.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Cheval Residences</b><span>chevalcollection.com</span></span></a>
+    <a href="https://www.hometogo.co.uk/london/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.co.uk</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Kensington%20London&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — Kensington 2 háló</b><span>booking.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -447,8 +470,8 @@
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
-    <li><b>Osztrák matrica</b> (10 napos, 12,80 €) — <b>indulás előtt</b>, digitálisan.</li>
-    <li><b>Schönbrunn</b> — időpontos jegy online (a leglátogatottabb).</li>
+    <li><a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><b>Osztrák matrica</b></a> (10 napos, 12,80 €) — <b>indulás előtt</b>, digitálisan.</li>
+    <li><a href="https://www.schoenbrunn.at/en/tickets-and-tours" target="_blank" rel="noopener"><b>Schönbrunn</b></a> — időpontos jegy online (a leglátogatottabb).</li>
     <li>A többi múzeum ritkán telik be — elég helyben.</li>
   </ul>
 
@@ -462,6 +485,11 @@
     <a href="https://www.vrbo.com/search?q=Vienna&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — 2 bedroom</b><span>vrbo.com</span></span></a>
     <a href="https://www.adagio-city.com/gb/city/vienna.shtml" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Aparthotel Adagio Wien</b><span>adagio-city.com</span></span></a>
     <a href="https://www.viennaresidence.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Vienna Residence</b><span>viennaresidence.com</span></span></a>
+    <a href="https://numastays.com/en/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>numa (apartman-hotel)</b><span>numastays.com</span></span></a>
+    <a href="https://www.limehome.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Limehome</b><span>limehome.com</span></span></a>
+    <a href="https://www.plumguide.com/s/vienna" target="_blank" rel="noopener"><span class="ic">⭐</span><span class="lt"><b>Plum Guide (válogatott)</b><span>plumguide.com</span></span></a>
+    <a href="https://wunderflats.com/en/furnished-apartments/vienna" target="_blank" rel="noopener"><span class="ic">🔑</span><span class="lt"><b>Wunderflats (bútorozott)</b><span>wunderflats.com</span></span></a>
+    <a href="https://www.hometogo.com/vienna/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -553,10 +581,10 @@
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
-    <li><b>Alpesi apartman</b> — nyáron kelendő, <span class="deadline">2–3 hónappal előre.</span></li>
-    <li><b>Dachstein felvonó + barlang</b> — online jegy (a jégbarlang csak máj. 1 – nov. 1 között nyitva).</li>
-    <li><b>Hallstatti sóbánya</b> — időpont ajánlott (reggel korán a tömeg előtt).</li>
-    <li><b>Schönbrunn</b> + <b>osztrák matrica</b> indulás előtt.</li>
+    <li><a href="https://www.booking.com/searchresults.html?ss=Obertraun&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><b>Alpesi apartman</b></a> — nyáron kelendő, <span class="deadline">2–3 hónappal előre.</span></li>
+    <li><a href="https://www.dachstein-salzkammergut.com/en/tickets-offers/tickets-summer/single-tariffs" target="_blank" rel="noopener"><b>Dachstein felvonó + barlang</b></a> — online jegy (a jégbarlang csak máj. 1 – nov. 1 között nyitva).</li>
+    <li><a href="https://www.salzwelten.at/en/hallstatt" target="_blank" rel="noopener"><b>Hallstatti sóbánya</b></a> — időpont ajánlott (reggel korán a tömeg előtt).</li>
+    <li><a href="https://www.schoenbrunn.at/en/tickets-and-tours" target="_blank" rel="noopener"><b>Schönbrunn</b></a> + <a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><b>osztrák matrica</b></a> indulás előtt.</li>
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Ez a leggazdagabb „élménymix” — de ügyelj a pakolásra: 4 éj egy helyen az Alpokban, majd <b>egyszeri</b> átszállás Bécsbe. Így nem napi csomagolás. A Hallstatt-faluba reggel 9 előtt vagy 16 után menj — napközben zsúfolásig megtelik buszos csoportokkal.</div>
@@ -570,6 +598,11 @@
     <a href="https://obertraun.net/accommodation/apartments/" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Obertraun apartmanok</b><span>obertraun.net</span></span></a>
     <a href="https://www.interhome.com/austria/salzkammergut/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Interhome Salzkammergut</b><span>interhome.com</span></span></a>
     <a href="https://www.booking.com/searchresults.html?ss=Vienna&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏙️</span><span class="lt"><b>Booking — Bécs 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Bad%20Ischl&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🛏️</span><span class="lt"><b>Booking — Bad Ischl 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.airbnb.com/s/Hallstatt--Austria/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — Hallstatt 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.fewo-direkt.de/ferienwohnung-ferienhaus/salzkammergut.r53" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Fewo-direkt (Salzkammergut)</b><span>fewo-direkt.de</span></span></a>
+    <a href="https://www.salzkammergut.at/en/accommodation.html" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Salzkammergut hivatalos</b><span>salzkammergut.at</span></span></a>
+    <a href="https://www.hometogo.com/salzkammergut/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -651,10 +684,10 @@
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
-    <li><b>Neuschwanstein</b> — időpontos jegy <b>kötelező</b>, hetekkel előre elkel. <span class="deadline">Amint megvan a dátum (+2,50 € foglalási díj).</span></li>
-    <li><b>Zugspitze</b> — online jegy; tiszta idő esetén menj (ellenőrizd a webkamerát indulás előtt).</li>
-    <li><b>Deutsches Museum</b> — online időpont a sorban állás ellen.</li>
-    <li><b>Alpesi apartman</b> (Garmisch/Füssen) + <b>osztrák matrica</b> indulás előtt.</li>
+    <li><a href="https://www.hohenschwangau.de/ticketcenter" target="_blank" rel="noopener"><b>Neuschwanstein</b></a> — időpontos jegy <b>kötelező</b>, hetekkel előre elkel. <span class="deadline">Amint megvan a dátum (+2,50 € foglalási díj).</span></li>
+    <li><a href="https://zugspitze.de/en/Service-information/Tickets-rates/Zugspitze" target="_blank" rel="noopener"><b>Zugspitze</b></a> — online jegy; tiszta idő esetén menj (ellenőrizd a webkamerát indulás előtt).</li>
+    <li><a href="https://www.deutsches-museum.de/en/museumsinsel/visit/admission-and-tickets" target="_blank" rel="noopener"><b>Deutsches Museum</b></a> — online időpont a sorban állás ellen.</li>
+    <li><a href="https://www.booking.com/searchresults.html?ss=Garmisch-Partenkirchen&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><b>Alpesi apartman</b></a> (Garmisch/Füssen) + <a href="https://www.asfinag.at/en/toll/vignette/" target="_blank" rel="noopener"><b>osztrák matrica</b></a> indulás előtt.</li>
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp &amp; őszinte figyelmeztetés</span>Ez a legnagyobb „wow”, de kimondom: a <b>~8 órás út</b> ütközik a „ne kelljen sokat utazni” kéréseddel, és a <b>Zugspitze önmagában ~200 €</b> 3 főnek. Ha a budget szorít, hagyd el a Zugspitzét (a Partnachklamm szurdok a tört részéért hasonlóan látványos) — így marad bőven tartalék. 10 napra ez a terv <b>nem</b> fér bele a keretbe; 7 nap az ideális.</div>
@@ -668,6 +701,11 @@
     <a href="https://www.airbnb.com/s/Garmisch-Partenkirchen--Germany/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Airbnb — Garmisch 2 háló</b><span>airbnb.com</span></span></a>
     <a href="https://www.gapa-tourismus.de/en/accommodation" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Garmisch hivatalos szállások</b><span>gapa-tourismus.de</span></span></a>
     <a href="https://www.interhome.com/germany/bavaria/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Interhome Bajorország</b><span>interhome.com</span></span></a>
+    <a href="https://numastays.com/en/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>numa (München, apartman)</b><span>numastays.com</span></span></a>
+    <a href="https://www.limehome.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Limehome</b><span>limehome.com</span></span></a>
+    <a href="https://www.fewo-direkt.de/ferienwohnung-ferienhaus/garmisch-partenkirchen.r11202" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Fewo-direkt (Garmisch)</b><span>fewo-direkt.de</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=F%C3%BCssen&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏰</span><span class="lt"><b>Booking — Füssen 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.hometogo.com/garmisch-partenkirchen/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -778,10 +816,10 @@
 
   <h3>Előre foglalni</h3>
   <ul class="clean">
-    <li><b>Repjegy + bérautó</b> — a nyári dátumok gyorsan elkelnek. <span class="deadline">3–5 hónappal előre.</span></li>
-    <li><b>Blue Lagoon / Sky Lagoon</b> — kötött időpont, előre elkel. <span class="deadline">Hetekkel előre.</span></li>
-    <li><b>Szállások a déli part mentén</b> — kevés a hely, nyáron telt ház. <span class="deadline">Minél előbb.</span></li>
-    <li><b>Gleccsertúra / lagúna-hajó</b> — vezetett program, limitált hely.</li>
+    <li><a href="https://www.skyscanner.net/transport/flights/bud/kef/" target="_blank" rel="noopener"><b>Repjegy</b></a> + <a href="https://www.rentalcars.com" target="_blank" rel="noopener"><b>bérautó</b></a> — a nyári dátumok gyorsan elkelnek. <span class="deadline">3–5 hónappal előre.</span></li>
+    <li><a href="https://www.bluelagoon.com" target="_blank" rel="noopener"><b>Blue Lagoon</b></a> / <a href="https://www.skylagoon.com" target="_blank" rel="noopener"><b>Sky Lagoon</b></a> — kötött időpont, előre elkel. <span class="deadline">Hetekkel előre.</span></li>
+    <li><a href="https://www.booking.com/searchresults.html?ss=Vik%20Iceland&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><b>Szállások a déli part mentén</b></a> — kevés a hely, nyáron telt ház. <span class="deadline">Minél előbb.</span></li>
+    <li><a href="https://icelagoon.is" target="_blank" rel="noopener"><b>Gleccsertúra / lagúna-hajó</b></a> — vezetett program, limitált hely.</li>
   </ul>
 
   <div class="callout"><span class="tip">Insider tipp</span>Ha Izland a cél, inkább <b>halaszd egy nagyobb büdzsés évre</b>, és akkor csináld rendesen (7+ nap, nyugodt tempó) — a kapkodós, túl olcsóra húzott izlandi út pont a lényeget veszíti el. Nyáron a <b>21–22 órás nappali fény</b> miatt rugalmas a program (késő esti vízeséseknél alig van tömeg), viszont <b>északi fény nyáron nincs</b> — azt csak szept.–márc. között látni.</div>
@@ -816,6 +854,11 @@
     <a href="https://www.rrhotel.is/" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Reykjavik Residence</b><span>rrhotel.is</span></span></a>
     <a href="https://www.vrbo.com/search?q=South%20Iceland&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — déli part 2 háló</b><span>vrbo.com</span></span></a>
     <a href="https://www.booking.com/searchresults.html?ss=Vik%20Iceland&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🏔️</span><span class="lt"><b>Booking — Vík 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://homes-and-villas.marriott.com/en/vacation-rentals/iceland/reykjavik" target="_blank" rel="noopener"><span class="ic">🏨</span><span class="lt"><b>Marriott Homes &amp; Villas</b><span>marriott.com</span></span></a>
+    <a href="https://www.heyiceland.is" target="_blank" rel="noopener"><span class="ic">🇮🇸</span><span class="lt"><b>Hey Iceland (vendégházak)</b><span>heyiceland.is</span></span></a>
+    <a href="https://www.airbnb.com/s/South-Region--Iceland/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏠</span><span class="lt"><b>Airbnb — déli part 2 háló</b><span>airbnb.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=H%C3%B6fn&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🧊</span><span class="lt"><b>Booking — Höfn 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.hometogo.com/reykjavik/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -932,9 +975,9 @@
 
   <h3>Előre foglalni &amp; intézni</h3>
   <ul class="clean">
-    <li><b>eTA</b> — a repjegy után azonnal, a hivatalos canada.ca oldalon (ne fizetős közvetítőn!). <span class="deadline">Indulás előtt, pár perc.</span></li>
-    <li><b>Repjegy</b> — a legnagyobb tétel, nyárra korán. <span class="deadline">4–6 hónappal előre.</span></li>
-    <li><b>Niagara City Cruises</b> + <b>CN Tower</b> — időpontos jegy a sor ellen.</li>
+    <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html" target="_blank" rel="noopener"><b>eTA</b></a> — a repjegy után azonnal, a hivatalos canada.ca oldalon (ne fizetős közvetítőn!). <span class="deadline">Indulás előtt, pár perc.</span></li>
+    <li><a href="https://www.skyscanner.net/transport/flights/bud/yyza/" target="_blank" rel="noopener"><b>Repjegy</b></a> — a legnagyobb tétel, nyárra korán. <span class="deadline">4–6 hónappal előre.</span></li>
+    <li><a href="https://www.niagaracitycruises.com" target="_blank" rel="noopener"><b>Niagara City Cruises</b></a> + <a href="https://www.cntower.ca" target="_blank" rel="noopener"><b>CN Tower</b></a> — időpontos jegy a sor ellen.</li>
     <li><b>Útlevél</b> — a beutazástól számított érvényesség; ellenőrizd a 6 hónapos szabályt.</li>
   </ul>
 
@@ -969,6 +1012,11 @@
     <a href="https://www.airbnb.com/s/Montreal--Canada/homes?min_bedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Airbnb — Montréal 2 háló</b><span>airbnb.com</span></span></a>
     <a href="https://www.booking.com/searchresults.html?ss=Ottawa&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">🍁</span><span class="lt"><b>Booking — Ottawa 2 háló</b><span>booking.com</span></span></a>
     <a href="https://www.sonder.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Sonder (apartman-hotelek)</b><span>sonder.com</span></span></a>
+    <a href="https://homes-and-villas.marriott.com/en/vacation-rentals/canada/toronto" target="_blank" rel="noopener"><span class="ic">🏨</span><span class="lt"><b>Marriott Homes &amp; Villas</b><span>marriott.com</span></span></a>
+    <a href="https://www.corporatestays.com" target="_blank" rel="noopener"><span class="ic">🏢</span><span class="lt"><b>Corporate Stays (bútorozott)</b><span>corporatestays.com</span></span></a>
+    <a href="https://www.vrbo.com/search?q=Toronto&amp;minBedrooms=2" target="_blank" rel="noopener"><span class="ic">🏡</span><span class="lt"><b>Vrbo — Toronto 2 bedroom</b><span>vrbo.com</span></span></a>
+    <a href="https://www.booking.com/searchresults.html?ss=Quebec%20City&amp;nflt=entire_place_bedroom_count%3D2" target="_blank" rel="noopener"><span class="ic">⚜️</span><span class="lt"><b>Booking — Québec 2 háló</b><span>booking.com</span></span></a>
+    <a href="https://www.hometogo.com/toronto/" target="_blank" rel="noopener"><span class="ic">🔍</span><span class="lt"><b>HomeToGo (aggregátor)</b><span>hometogo.com</span></span></a>
   </div>
 
   <h3>🔗 Hasznos linkek <small style="font-weight:400;font-size:.85rem;color:var(--muted)">— foglalás &amp; felkészülés</small></h3>
@@ -1062,6 +1110,35 @@
   if(saved){for(var j=0;j<tabs.length;j++){if(tabs[j].id===saved){start=tabs[j];break;}}}
   if(!start)start=tabs[0];
   sel(start,{focus:false,scroll:false});
+})();
+
+/* Téma-váltó: böngésző alapértelmezés, user választás localStorage-ban mentve */
+(function(){
+  var KEY='nyaralasterv.theme';
+  var root=document.documentElement;
+  var btn=document.getElementById('themeToggle');
+  var icon=document.getElementById('themeIcon');
+  var label=document.getElementById('themeLabel');
+  function systemDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}
+  function current(){var a=root.getAttribute('data-theme');if(a==='dark'||a==='light')return a;return systemDark()?'dark':'light';}
+  function render(){
+    var dark=current()==='dark';
+    if(icon)icon.textContent=dark?'☀️':'🌙';          // a gomb a KÖVETKEZŐ témát kínálja
+    if(label)label.textContent=dark?'Világos':'Sötét';
+    if(btn)btn.setAttribute('aria-pressed',dark?'true':'false');
+  }
+  render();
+  if(btn)btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    render();
+  });
+  if(window.matchMedia){
+    var mq=window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange=function(){var s=null;try{s=localStorage.getItem(KEY);}catch(e){}if(s!=='dark'&&s!=='light')render();};
+    if(mq.addEventListener)mq.addEventListener('change',onChange);else if(mq.addListener)mq.addListener(onChange);
+  }
 })();
 </script>
 
