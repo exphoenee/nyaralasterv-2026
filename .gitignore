@@ -1,0 +1,11 @@
+# Helyi eszköz- és skill-konfigok (nem kellenek a deployhoz)
+.claude/
+.mcp.json
+skills-lock.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

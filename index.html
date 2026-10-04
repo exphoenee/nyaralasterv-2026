@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Családi nyaralásterv 2026 — 5 úticél, Pécs kiindulással.">
+<title>Nyaralásterv 2026 — 4 úticél</title>
+<style>
+  :root{
+    --paper:#F4F1E9;
+    --card:#FBF9F3;
+    --ink:#1B2A30;
+    --ink-soft:#4A5a60;
+    --line:#DED7C7;
+    --accent:#0E6E63;      /* alpine pine-teal */
+    --accent-soft:#D9EAE6;
+    --amber:#B4722A;       /* warm sun / budget */
+    --amber-soft:#F3E6D2;
+    --good:#2E7D57;
+    --warn:#B4722A;
+    --crit:#B23A32;
+    --muted:#73827f;
+    --shadow:0 1px 2px rgba(27,42,48,.06),0 8px 24px rgba(27,42,48,.07);
+    --radius:14px;
+    --maxw:1080px;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#10171A;--card:#18232700;--card:#182327;--ink:#E9E6DD;--ink-soft:#AFB9B6;
+      --line:#2A373B;--accent:#5FBCAF;--accent-soft:#163631;--amber:#D79A54;--amber-soft:#3A2C18;
+      --good:#6BC79A;--warn:#D79A54;--crit:#E07a72;--muted:#8A9794;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#F4F1E9;--card:#FBF9F3;--ink:#1B2A30;--ink-soft:#4A5a60;--line:#DED7C7;
+    --accent:#0E6E63;--accent-soft:#D9EAE6;--amber:#B4722A;--amber-soft:#F3E6D2;
+    --good:#2E7D57;--warn:#B4722A;--crit:#B23A32;--muted:#73827f;
+    --shadow:0 1px 2px rgba(27,42,48,.06),0 8px 24px rgba(27,42,48,.07);
+  }
+  :root[data-theme="dark"]{
+    --paper:#10171A;--card:#182327;--ink:#E9E6DD;--ink-soft:#AFB9B6;--line:#2A373B;
+    --accent:#5FBCAF;--accent-soft:#163631;--amber:#D79A54;--amber-soft:#3A2C18;
+    --good:#6BC79A;--warn:#D79A54;--crit:#E07a72;--muted:#8A9794;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* ---- Header ---- */
+  header.masthead{border-bottom:1px solid var(--line);padding:40px 0 28px;
+    background:linear-gradient(180deg,var(--accent-soft) 0%,transparent 70%);}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin:0 0 10px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3.2rem);
+    line-height:1.05;margin:0 0 6px;text-wrap:balance;letter-spacing:-.01em}
+  .sub{font-size:1.05rem;color:var(--ink-soft);margin:0 0 22px;max-width:60ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.85rem;
+    box-shadow:var(--shadow)}
+  .chip b{font-weight:650}
+
+  /* ---- Tabs ---- */
+  .tabbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:0}
+  .tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:thin}
+  .tab{flex:0 0 auto;border:1px solid transparent;background:transparent;color:var(--ink-soft);
+    font-family:var(--sans);font-size:.9rem;font-weight:600;padding:9px 16px;border-radius:999px;
+    cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+  .tab:hover{color:var(--ink);background:var(--card)}
+  .tab[aria-selected="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  :root[data-theme="dark"] .tab[aria-selected="true"]{color:#0b1416}
+  @media (prefers-color-scheme:dark){.tab[aria-selected="true"]{color:#0b1416}}
+  .tab:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+  /* ---- Panels ---- */
+  .panel{padding:34px 0 10px;animation:fade .3s ease}
+  .panel[hidden]{display:none}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.panel{animation:none}}
+
+  .p-eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700;margin:0 0 8px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,3.5vw,2.3rem);margin:0 0 8px;line-height:1.1;text-wrap:balance}
+  .thesis{font-size:1.08rem;color:var(--ink-soft);margin:0 0 26px;max-width:64ch}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:36px 0 14px;
+    display:flex;align-items:center;gap:10px}
+  h3::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block;border-radius:2px}
+
+  /* ---- Stat tiles ---- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 8px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 18px;box-shadow:var(--shadow)}
+  .stat .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:0 0 6px}
+  .stat .v{font-family:var(--serif);font-size:1.45rem;font-weight:600;line-height:1.1;
+    font-variant-numeric:tabular-nums}
+  .stat .v small{font-size:.8rem;color:var(--ink-soft);font-family:var(--sans);font-weight:500}
+
+  /* ---- Day cards ---- */
+  .days{display:grid;gap:14px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow)}
+  .day-head{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line)}
+  .day-num{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--accent);line-height:1;
+    font-variant-numeric:tabular-nums}
+  .day-title{font-weight:650;font-size:1.02rem}
+  .day-tag{margin-left:auto;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;
+    background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:999px;font-weight:700;align-self:center}
+  .blocks{padding:6px 18px 16px}
+  .block{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .block:last-child{border-bottom:0}
+  .block .when{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;padding-top:3px}
+  .block .what{font-size:.95rem}
+  .block .what .anchor{font-weight:650}
+  .note{font-size:.85rem;color:var(--ink-soft)}
+  .gf{color:var(--accent);font-weight:600}
+
+  /* ---- Tables ---- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:460px;background:var(--card)}
+  th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);font-size:.92rem}
+  thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;
+    background:color-mix(in srgb,var(--accent-soft) 50%,var(--card))}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:.88rem}
+  tbody tr:last-child td{border-bottom:0}
+  tr.total td{font-weight:700;background:var(--amber-soft)}
+  tr.total td.num{color:var(--ink)}
+
+  /* ---- Lists & callouts ---- */
+  ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.clean li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:8px;padding:11px 15px;font-size:.93rem}
+  ul.clean li b{font-weight:650}
+  .deadline{color:var(--amber);font-weight:700;font-size:.82rem}
+  .callout{background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 35%,var(--line));
+    border-radius:var(--radius);padding:16px 18px;margin-top:16px;font-size:.95rem}
+  .callout .tip{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);font-weight:700;display:block;margin-bottom:5px}
+  .pill{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;vertical-align:middle}
+  .pill.free{background:var(--accent-soft);color:var(--accent)}
+  .pill.ok{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+  .pill.tight{background:var(--amber-soft);color:var(--amber)}
+  .pill.no{background:color-mix(in srgb,var(--crit) 15%,transparent);color:var(--crit)}
+
+  .reco{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;box-shadow:var(--shadow);margin-top:18px}
+  .reco h3{margin-top:0}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:640px){.two{grid-template-columns:1fr}.block{grid-template-columns:70px 1fr}}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 60px;color:var(--ink-soft);font-size:.82rem}
+  footer a{color:var(--accent)}
+  .srcs{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+  .disc{margin-top:14px;font-size:.78rem;color:var(--muted);max-width:75ch}
+</style>
+</head>
+<body>
+
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Családi nyaralásterv · Nyár 2026</p>
+    <h1>Négy úticél, egy keret</h1>
+    <p class="sub">Részletes, napról-napra tervek egy science- és történelem-rajongó családnak. Kiindulás: Pécs. A lencse: „végre láttunk valami nagyot”.</p>
+    <div class="chips">
+      <span class="chip">👨‍👩‍👦 <b>2 felnőtt + 1 (15 éves)</b></span>
+      <span class="chip">📍 Indulás: <b>Pécs</b></span>
+      <span class="chip">🗓️ <b>jún. 16 – aug. 15</b> között</span>
+      <span class="chip">💶 Keret: <b>max. 3 400 € (~1,2 M Ft)</b> · mindennel</span>
+      <span class="chip">🌾 <b>Végig gluténmentes</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Úticélok">
+      <button class="tab" role="tab" aria-selected="true"  aria-controls="p-overview" id="t-overview">Áttekintés</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-london"   id="t-london">✈️ London</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-vienna"   id="t-vienna">🏛️ Bécs</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-alps"     id="t-alps">⛰️ Alpok + Bécs</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-munich"   id="t-munich">🏰 München + Bajor-Alpok</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-iceland"  id="t-iceland">🌋 Izland <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- ============ OVERVIEW ============ -->
+<section class="panel" id="p-overview" role="tabpanel" aria-labelledby="t-overview">
+  <p class="p-eyebrow">Összehasonlítás</p>
+  <h2>A négy terv egy pillantásra</h2>
+  <p class="thesis">Mindegyik belefér a keretbe (Izland nem — az ~6 000 € lenne 3 főre, ezért kimaradt). Az alábbi becslések 3 főre, mindent tartalmaznak: utazás, szállás, étkezés, belépők, helyi közlekedés.</p>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Úticél</th><th>Mód</th><th>Hossz</th><th class="num">Becsült költség</th><th class="num">Tartalék</th><th>Fő húzóerő</th></tr></thead>
+      <tbody>
+        <tr><td><b>London</b></td><td>repülő</td><td>6 nap</td><td class="num">~2 450 €</td><td class="num">~950 €</td><td>Ingyenes science + történelem múzeumok</td></tr>
+        <tr><td><b>Bécs</b></td><td>autó</td><td>6 nap</td><td class="num">~1 800 €</td><td class="num">~1 600 €</td><td>Olcsó, közeli; 19 alatt ingyen múzeumok</td></tr>
+        <tr><td><b>Alpok + Bécs</b></td><td>autó</td><td>9 nap</td><td class="num">~2 830 €</td><td class="num">~570 €</td><td>Jégbarlang + sóbánya + nagyváros egyben</td></tr>
+        <tr><td><b>München + Bajor-Alpok</b></td><td>autó</td><td>7 nap</td><td class="num">~2 700 €</td><td class="num">~700 €</td><td>Deutsches Museum + mesekastély + Alpok</td></tr>
+        <tr style="opacity:.92"><td><b>Izland</b> 🌋</td><td>repülő</td><td>8 nap</td><td class="num">~6 000 €</td><td class="num" style="color:var(--crit)">−2 600 €</td><td>A természeti wow csúcsa — de <b>a kereten felül</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)">🌋 Az <b>Izland</b>-terv tudatosan a 3 400 €-s kereten <b>felül</b> van (kérésre kidolgozva) — reálisan ~6 000 € 3 főre. A fülön belül megmutatom, mivel lehet lefaragni (vendégházak, önellátás, olcsóbb autó).</p>
+
+  <div class="reco">
+    <h3>A javaslatom</h3>
+    <p style="margin:0 0 10px">A lencsétek — „valami nagy” + természettudomány + történelem + természet, egy 15 évessel — alapján két terv emelkedik ki:</p>
+    <div class="two">
+      <div>
+        <p style="margin:0 0 6px"><b>Ha a repülés belefér:</b> 🏆 <b>London</b>. A Natural History + Science Museum + British Museum <span class="pill free">INGYENES</span>, és pont a ti érdeklődésetek — a wow-faktor óriási, a múzeumköltség nulla, így a drága szállás is kigazdálkodható.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 6px"><b>Ha autóval mentek:</b> 🏆 <b>Alpok + Bécs</b> kombó. Ez fedi le a legtöbb érdeklődést egyszerre: jégbarlang és sóbánya (science), alpesi természet, majd nagyvárosi múzeumok és történelem — és még belefér a keretbe.</p>
+      </div>
+    </div>
+    <p style="margin:12px 0 0;font-size:.9rem;color:var(--ink-soft)">A <b>München</b>-terv a legnagyobb egyedi „wow” (a világ legnagyobb tudományos múzeuma + Neuschwanstein), de a ~8 órás út és a magasabb árak miatt 7 napnál tovább nem érdemes nyújtani. A <b>Bécs</b>-terv a legolcsóbb és legrugalmasabb — bőven marad tartalék, akár bővíthető.</p>
+  </div>
+</section>
+
+<!-- ============ LONDON ============ -->
+<section class="panel" id="p-london" role="tabpanel" aria-labelledby="t-london" hidden>
+  <p class="p-eyebrow">1. terv · repülővel Budapestről</p>
+  <h2>London — a science a történelemmel</h2>
+  <p class="thesis">A világ egyik legjobb múzeumvárosa, ahol a legnagyobb látnivalók ráadásul ingyenesek. Egy 15 évesnek a dínócsontváztól a Rosetta-kőig minden egy helyen.</p>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Utazás</p><p class="v">~2,5 ó <small>repülő BUD↔LON</small></p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">6 nap <small>/ 5 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v">~2 450 €</p></div>
+    <div class="stat"><p class="k">Keret</p><p class="v"><span class="pill ok">Belefér</span></p></div>
+  </div>
+
+  <h3>Napról napra</h3>
+  <div class="days">
+    <div class="day">
+      <div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; Temze-part</span><span class="day-tag">Laza nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Repülő Budapestről (Wizz/Ryanair), transzfer a szállásra (Zone 2 — pl. Paddington vagy Victoria környéke, U-Bahn-közeli). Beköltözés, Oyster-kártyák beállítása.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">South Bank-i séta a Temze mentén</span> — London Eye, Big Ben a túlparton. Könnyű nyitónap. <span class="note">Backup: ha késik a gép, csak a környék + korai pihenés.</span></span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-head"><span class="day-num">2</span><span class="day-title">South Kensington — a science-nap</span><span class="day-tag">Múzeum</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Natural History Museum</span> <span class="pill free">INGYEN</span> — dínócsontvázak, kék bálna, földrengés-szimulátor. Nyit 10:00. (Nyáron/hétvégén foglalj ingyenes idősávot.)</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Science Museum</span> <span class="pill free">INGYEN</span> — 50 méterre: űrhajózás, gépek, interaktív termek. Tini-mágnes.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Hyde Park séta. <span class="gf">GF: CERU (South Kensington)</span> — mediterrán, gluténmentes-barát. <span class="note">Esős napra tökéletes: mindkettő fedett.</span></span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-head"><span class="day-num">3</span><span class="day-title">British Museum &amp; West End</span><span class="day-tag">Történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">British Museum</span> <span class="pill free">INGYEN</span> — Rosetta-kő, egyiptomi múmiák, görög kincsek. Világtörténelem egy épületben.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Covent Garden, utcai előadók, Chinatown, Soho séta.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Opcionális West End musical. <span class="gf">GF: Niche (Islington) vagy Indigo (Covent Garden) — 100% gluténmentes.</span></span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-head"><span class="day-num">4</span><span class="day-title">Tower &amp; Greenwich</span><span class="day-tag">Vár + csillagászat</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Tower of London + Tower Bridge</span> — koronaékszerek, ezeréves erőd (~£35 felnőtt, online olcsóbb).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Temze-hajó Greenwichbe → <span class="anchor">Royal Observatory</span> — a kezdő hosszúsági kör, csillagászat, idő-galéria. <span class="note">Figyelem: 2026. nov. 2-tól felújítás miatt zár — nyáron nyitva.</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Wicked Fish (Spitalfields) — dedikált gluténmentes fish &amp; chips.</span></span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-head"><span class="day-num">5</span><span class="day-title">Westminster / Harry Potter stúdió</span><span class="day-tag">Wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Opció A</span><span class="what"><span class="anchor">Warner Bros Studio — The Making of Harry Potter</span> (~£53/fő, a város szélén, ~fél-egész nap). Ha a tini rajongó, ez a „nagy élmény”. <span class="deadline">Hetekkel előre elkel!</span></span></div>
+        <div class="block"><span class="when">Opció B</span><span class="what">Westminster (Parliament, Big Ben kívülről), Westminster Abbey vagy Churchill War Rooms (II. világháborús bunker), St. Paul-székesegyház.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Camden Market vagy Soho. <span class="gf">GF: Pho (Coeliac UK-akkreditált) vagy Los Mochis (100% GF).</span></span></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-head"><span class="day-num">6</span><span class="day-title">Borough Market &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Borough Market</span> — gluténmentes standok, utolsó kóstolók, ajándékok.</span></div>
+        <div class="block"><span class="when">Nappal</span><span class="what">Transzfer a reptérre, repülő haza. <span class="note">Hagyj 3 órát a check-inre.</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 6 nap)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Repjegy BUD↔London (3 fő)</td><td class="num">450</td><td>Nyári ár, korán foglalva</td></tr>
+      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80</td><td>Vonat/busz/parkolás</td></tr>
+      <tr><td>Szállás (5 éj, családi szoba)</td><td class="num">880</td><td>Zone 2, ~£150/éj</td></tr>
+      <tr><td>Helyi közlekedés (Oyster)</td><td class="num">120</td><td>Napi sapka + tini-kedvezmény</td></tr>
+      <tr><td>Étkezés (6 nap, GF)</td><td class="num">650</td><td>Dráguló város</td></tr>
+      <tr><td>Belépők (múzeumok ingyen!)</td><td class="num">270</td><td>Tower, Greenwich, extrák</td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 450</td><td>+ Harry Potter stúdió ~150 €</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Előre foglalni</h3>
+  <ul class="clean">
+    <li><b>Repjegy</b> — minél előbb, a nyári árak gyorsan emelkednek. <span class="deadline">2–4 hónappal előre.</span></li>
+    <li><b>Warner Bros Harry Potter stúdió</b> — rendszeresen elkel. <span class="deadline">Amint megvannak a dátumok.</span></li>
+    <li><b>Natural History &amp; Science Museum</b> — ingyenes idősáv-foglalás hétvégére/nyárra a hivatalos oldalon.</li>
+    <li><b>Tower of London</b> — online jegy olcsóbb és sorkerülő.</li>
+  </ul>
+
+  <div class="callout"><span class="tip">Insider tipp</span>A három nagy múzeum ingyenessége miatt Londonban a pénzt a szállásra és egy-két fizetős „nagy” élményre (Tower, Harry Potter) érdemes csoportosítani — így egy kifejezetten drága város is belefér a keretbe. London egyben a világ egyik <b>legjobb gluténmentes városa</b>: szinte minden étteremnek van jelölt GF-menüje.</div>
+</section>
+
+<!-- ============ VIENNA ============ -->
+<section class="panel" id="p-vienna" role="tabpanel" aria-labelledby="t-vienna" hidden>
+  <p class="p-eyebrow">2. terv · autóval (~4,5 óra)</p>
+  <h2>Bécs — a közeli nagyváros</h2>
+  <p class="thesis">A legolcsóbb és leglazább terv: Pécstől fél nap autóút, és a 19 év alattiaknak a legnagyobb múzeumok ingyenesek. Marad a legtöbb tartalék a keretből.</p>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Utazás</p><p class="v">~4,5 ó <small>autó, 423 km</small></p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">6 nap <small>/ 5 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v">~1 800 €</p></div>
+    <div class="stat"><p class="k">Keret</p><p class="v"><span class="pill ok">Bőven belefér</span></p></div>
+  </div>
+
+  <h3>Napról napra</h3>
+  <div class="days">
+    <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; belváros</span><span class="day-tag">Laza nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Autóút Pécsről (osztrák matrica kell!). Szállás a belvároson kívül, U-Bahn mellett — az autó marad, minden metróval.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Stephansdom &amp; Graben séta</span>, első bécsi vacsora.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Naturhistorisches Museum</span><span class="day-tag">Science</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Naturhistorisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok, a 29 000 éves Willendorfi Vénusz. Hatalmas gyűjtemény.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">MuseumsQuartier hangulat. <span class="gf">GF: Gasthaus Zum Wohl — dedikált gluténmentes Wiener Schnitzel!</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Schönbrunn</span><span class="day-tag">Történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schönbrunn kastély + kert</span> — a Habsburgok nyári rezidenciája (online időpont).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">A kertben a <span class="anchor">Tiergarten</span> — a világ legrégebbi, ma is működő állatkertje. Vagy Gloriette-kilátó.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Hofburg negyed sétája.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Technika &amp; tenger</span><span class="day-tag">Science</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Technisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — interaktív technika, közlekedés, energia.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Haus des Meeres</span> — akvárium egy háborús bunkertoronyban, tetőterasz panorámával (~9,80 € tininek).</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Pizzeria Scarabocchio — külön GF konyha és kőkemence.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Prater &amp; Belvedere</span><span class="day-tag">Élmény</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Prater</span> — óriáskerék (Riesenrad) és hullámvasutak. Tini-kedvenc.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Belvedere (Klimt: A csók) vagy Donau-parti séta.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Naschmarkt &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Naschmarkt</span> — piac, gluténmentes standok, utolsó falatok.</span></div>
+        <div class="block"><span class="when">Nappal</span><span class="what">Autóút haza (~4,5 óra).</span></div>
+      </div></div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 6 nap)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">160</td><td>10 napos matrica 12,80 €</td></tr>
+      <tr><td>Szállás (5 éj)</td><td class="num">650</td><td>~130 €/éj, U-Bahn mellett</td></tr>
+      <tr><td>Étkezés (6 nap, GF)</td><td class="num">550</td><td></td></tr>
+      <tr><td>Belépők</td><td class="num">250</td><td>NHM + Technik ingyen; Schönbrunn, Prater, Haus des Meeres</td></tr>
+      <tr><td>Parkolás</td><td class="num">100</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~1 710</td><td>Marad ~1 600 € tartalék</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Előre foglalni</h3>
+  <ul class="clean">
+    <li><b>Osztrák matrica</b> (10 napos, 12,80 €) — <b>indulás előtt</b>, digitálisan.</li>
+    <li><b>Schönbrunn</b> — időpontos jegy online (a leglátogatottabb).</li>
+    <li>A többi múzeum ritkán telik be — elég helyben.</li>
+  </ul>
+
+  <div class="callout"><span class="tip">Insider tipp</span>Mivel a 19 év alattiaknak a Naturhistorisches és a Technisches Museum is <b>ingyenes</b>, a bécsi terv messze a legolcsóbb — a ~1 600 € tartalékból akár 2–3 nappal meg is hosszabbíthatjátok (pl. egy napos Salzburg-kirándulással), vagy magasabb kategóriás szállást választhattok.</div>
+</section>
+
+<!-- ============ ALPS + VIENNA ============ -->
+<section class="panel" id="p-alps" role="tabpanel" aria-labelledby="t-alps" hidden>
+  <p class="p-eyebrow">3. terv · autóval · a kombó</p>
+  <h2>Osztrák Alpok + Bécs</h2>
+  <p class="thesis">A kérésed szerint: alpesi szállás a Salzkammergutban (jégbarlang, sóbánya, tavak), majd 3–4 nap bécsi múzeum és városnézés. Ez fedi le a legtöbb érdeklődést egyetlen úton.</p>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Útvonal</p><p class="v">Salzkammergut → Bécs</p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">9 nap <small>/ 8 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v">~2 830 €</p></div>
+    <div class="stat"><p class="k">Keret</p><p class="v"><span class="pill ok">Belefér</span> <small>~570 € tartalék</small></p></div>
+  </div>
+
+  <h3>Napról napra</h3>
+  <div class="days">
+    <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Pécs → Salzkammergut</span><span class="day-tag">Utazás</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Autóút a tóvidékre (Obertraun/Bad Ischl környéke, ~5,5 óra, osztrák matrica). Beköltözés alpesi apartmanba.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Séta a Hallstätter See partján.</span> Laza nyitónap.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Dachstein</span><span class="day-tag">Science-wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Dachstein Krippenstein — Óriás-jégbarlang + Mammut-barlang</span> felvonóval, fent az <span class="anchor">5 Fingers</span> kilátóplatform. All-in-One jegy. Jéggel borított barlangrendszer nyáron — leejtett áll garantált.</span></div>
+        <div class="block"><span class="when">Megj.</span><span class="what"><span class="note">Backup eső esetén: Hallstatti sóbánya (fedett) — cseréld a 3. nappal.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Hallstatt sóbánya &amp; falu</span><span class="day-tag">Történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallstatti sóbánya</span> — a világ legrégebbi sóbányája: föld alatti tó, bányászcsúszdák, 7000 éves bányászat nyomai. Korán indulj (zsúfolt lesz).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Gosausee-tó séta a Dachstein tükörképével, vagy tavi hajózás.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Tavak &amp; császári nyár</span><span class="day-tag">Természet</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schafbergbahn</span> fogaskerekű a Wolfgangsee fölé — alpesi panoráma.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Bad Ischl — Sisi és Ferenc József nyári villája (Kaiservilla). Pakolás az átszálláshoz.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Átszállás Bécsbe</span><span class="day-tag">Utazás</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Salzkammergut → Bécs (~2,5 óra). Beköltözés (U-Bahn mellett).</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="anchor">Stephansdom &amp; Graben</span>. <span class="gf">GF: Gasthaus Zum Wohl (GF schnitzel).</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Naturhistorisches Museum</span><span class="day-tag">Science</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Naturhistorisches Museum</span> <span class="pill free">19 ALATT INGYEN</span> — dínók, meteoritok. Délután MuseumsQuartier.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Schönbrunn + állatkert</span><span class="day-tag">Történelem</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Schönbrunn kastély + kert</span>.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Tiergarten (legrégebbi állatkert) vagy Gloriette.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">8</span><span class="day-title">Technika &amp; Prater</span><span class="day-tag">Élmény</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Technisches Museum</span> <span class="pill free">INGYEN 19 alatt</span> vagy Haus des Meeres.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Prater</span> — óriáskerék, hullámvasutak. <span class="gf">GF: Pizzeria Scarabocchio.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">9</span><span class="day-title">Naschmarkt &amp; hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Naschmarkt reggel, majd autóút haza (~4,5 óra).</span></div>
+      </div></div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 9 nap)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">250</td><td>~1 600 km összesen</td></tr>
+      <tr><td>Szállás (4 éj Alpok + 4 éj Bécs)</td><td class="num">1 120</td><td>~140 €/éj átlag</td></tr>
+      <tr><td>Étkezés (9 nap, GF)</td><td class="num">820</td><td></td></tr>
+      <tr><td>Belépők</td><td class="num">550</td><td>Dachstein All-in-One (~192 €), sóbánya, Schafberg, bécsi múzeumok</td></tr>
+      <tr><td>Parkolás (Bécs)</td><td class="num">90</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 830</td><td>~570 € tartalék</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Előre foglalni</h3>
+  <ul class="clean">
+    <li><b>Alpesi apartman</b> — nyáron kelendő, <span class="deadline">2–3 hónappal előre.</span></li>
+    <li><b>Dachstein felvonó + barlang</b> — online jegy (a jégbarlang csak máj. 1 – nov. 1 között nyitva).</li>
+    <li><b>Hallstatti sóbánya</b> — időpont ajánlott (reggel korán a tömeg előtt).</li>
+    <li><b>Schönbrunn</b> + <b>osztrák matrica</b> indulás előtt.</li>
+  </ul>
+
+  <div class="callout"><span class="tip">Insider tipp</span>Ez a leggazdagabb „élménymix” — de ügyelj a pakolásra: 4 éj egy helyen az Alpokban, majd <b>egyszeri</b> átszállás Bécsbe. Így nem napi csomagolás. A Hallstatt-faluba reggel 9 előtt vagy 16 után menj — napközben zsúfolásig megtelik buszos csoportokkal.</div>
+</section>
+
+<!-- ============ MUNICH ============ -->
+<section class="panel" id="p-munich" role="tabpanel" aria-labelledby="t-munich" hidden>
+  <p class="p-eyebrow">4. terv · autóval · a nagy „wow”</p>
+  <h2>München + Bajor-Alpok</h2>
+  <p class="thesis">A legnagyobb egyedi wow: a világ legnagyobb tudományos-technikai múzeuma, a Neuschwanstein mesekastély és Németország teteje. Cserébe ~8 órás út és magasabb árak — ezért 7 napra szabva.</p>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Utazás</p><p class="v">~8 ó <small>autó, 695 km</small></p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">7 nap <small>/ 6 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v">~2 700 €</p></div>
+    <div class="stat"><p class="k">Keret</p><p class="v"><span class="pill tight">Belefér, de feszes</span></p></div>
+  </div>
+
+  <h3>Napról napra</h3>
+  <div class="days">
+    <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Pécs → München</span><span class="day-tag">Utazás</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what">Hosszú autóút (~8 óra, osztrák matrica kell). Beköltözés Münchenben. <span class="note">Opcionális megálló útközben: Salzburg.</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Rövid séta a Marienplatzon. Nagyon laza — a hosszú út után.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Deutsches Museum</span><span class="day-tag">Science-wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Deutsches Museum</span> — a világ <b>legnagyobb</b> tudományos-technikai múzeuma: bányászat, repülés, űrhajózás, elektromosság (családi jegy ~33 €). Egy science-rajongó tininek itt egy nap is kevés.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Mixto Verde (GF pizza/tészta) vagy Palmtreeclub (dedikált GF).</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">München város</span><span class="day-tag">Város</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Marienplatz, Residenz vagy <span class="anchor">BMW Welt &amp; Museum</span> (tini-mágnes, ingyenes belépő a Weltbe).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Englischer Garten</span> — nézd a folyami szörfösöket az Eisbachon! <span class="note">Backup eső: Pinakothek / Residenz.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">München → Garmisch + Neuschwanstein</span><span class="day-tag">Mesekastély</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Neuschwanstein kastély</span> — a Disney-kastély ihletője (időpontos jegy <b>kötelező</b>, ~21 €/fő). Marienbrücke a legszebb fotóhoz.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Átállás a bajor-alpesi bázisra (Garmisch-Partenkirchen, ~1,5 óra).</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Zugspitze</span><span class="day-tag">Németország teteje</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Zugspitze (2962 m)</span> — fogaskerekű + gleccserkabin a csúcsra (~78 €/felnőtt, tini-kedvezmény — a terv legdrágább tétele). 360°-os alpesi panoráma.</span></div>
+        <div class="block"><span class="when">Backup</span><span class="what"><span class="note">Ha a csúcson köd/zárás van: <span class="anchor">Partnachklamm</span> szurdok (olcsó, látványos) + Eibsee-tó.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Berchtesgaden</span><span class="day-tag">Só + smaragdtó</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Berchtesgadeni sóbánya</span> — bányászcsúszdák, föld alatti tavak (~22 €/felnőtt).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Königssee</span> — elektromos hajó a smaragdzöld tavon a St. Bartholomä-kápolnához (~21 €). <span class="note">Hosszú nap — vagy maradj közel: Eibsee + Garmisch.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what">Korai indulás, autóút haza (~8 óra). <span class="note">Oszd meg egy salzburgi ebédszünettel.</span></span></div>
+      </div></div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 7 nap)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Üzemanyag + osztrák matrica</td><td class="num">280</td><td>Hosszú út; Németo-ban nincs matrica</td></tr>
+      <tr><td>Szállás (3 éj München + 3 éj Garmisch)</td><td class="num">900</td><td>~150 €/éj</td></tr>
+      <tr><td>Étkezés (7 nap, GF)</td><td class="num">700</td><td>Drágább régió</td></tr>
+      <tr><td>Belépők</td><td class="num">480</td><td>Deutsches Museum, Neuschwanstein, Zugspitze (~200 €!), Berchtesgaden</td></tr>
+      <tr><td>Parkolás</td><td class="num">80</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~2 700</td><td>~700 € tartalék</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Előre foglalni</h3>
+  <ul class="clean">
+    <li><b>Neuschwanstein</b> — időpontos jegy <b>kötelező</b>, hetekkel előre elkel. <span class="deadline">Amint megvan a dátum (+2,50 € foglalási díj).</span></li>
+    <li><b>Zugspitze</b> — online jegy; tiszta idő esetén menj (ellenőrizd a webkamerát indulás előtt).</li>
+    <li><b>Deutsches Museum</b> — online időpont a sorban állás ellen.</li>
+    <li><b>Alpesi apartman</b> (Garmisch/Füssen) + <b>osztrák matrica</b> indulás előtt.</li>
+  </ul>
+
+  <div class="callout"><span class="tip">Insider tipp &amp; őszinte figyelmeztetés</span>Ez a legnagyobb „wow”, de kimondom: a <b>~8 órás út</b> ütközik a „ne kelljen sokat utazni” kéréseddel, és a <b>Zugspitze önmagában ~200 €</b> 3 főnek. Ha a budget szorít, hagyd el a Zugspitzét (a Partnachklamm szurdok a tört részéért hasonlóan látványos) — így marad bőven tartalék. 10 napra ez a terv <b>nem</b> fér bele a keretbe; 7 nap az ideális.</div>
+</section>
+
+<!-- ============ ICELAND ============ -->
+<section class="panel" id="p-iceland" role="tabpanel" aria-labelledby="t-iceland" hidden>
+  <p class="p-eyebrow">5. terv · repülővel + bérautóval · a kereten felül</p>
+  <h2>Izland — élő természettudományi tankönyv</h2>
+  <p class="thesis">A legnagyobb természeti wow: aktív vulkánok, gejzírek, vízesések, gleccserek, tektonikus lemezhatár, feketehomokos tengerpart. Egy science-rajongó tininek álomúticél — a gond kizárólag az ár.</p>
+
+  <div class="callout" style="background:color-mix(in srgb,var(--crit) 10%,var(--card));border-color:color-mix(in srgb,var(--crit) 35%,var(--line))">
+    <span class="tip" style="color:var(--crit)">Fontos — a kereten felül</span>
+    Ez a terv <b>tudatosan túllépi a 3 400 €-s keretet</b> (kérésre készült). Reális középkategóriás ára 3 főre, 8 napra <b>~6 000 €</b> — a kereted közel duplája. A fül alján megmutatom, mivel faragható le (vendégházak, önellátás, olcsóbb autó, rövidebb út).
+  </div>
+
+  <div class="stats">
+    <div class="stat"><p class="k">Utazás</p><p class="v">~4 ó <small>repülő BUD↔KEF (Wizz, direkt)</small></p></div>
+    <div class="stat"><p class="k">Hossz</p><p class="v">8 nap <small>/ 7 éj</small></p></div>
+    <div class="stat"><p class="k">Költség / 3 fő</p><p class="v" style="color:var(--crit)">~6 000 €</p></div>
+    <div class="stat"><p class="k">Keret</p><p class="v"><span class="pill no">Felette ~2 600 €</span></p></div>
+  </div>
+
+  <h3>Napról napra <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(Dél-Izland önvezetős körút)</small></h3>
+  <div class="days">
+    <div class="day"><div class="day-head"><span class="day-num">1</span><span class="day-title">Érkezés &amp; Blue Lagoon</span><span class="day-tag">Laza nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Repülő Budapestről Keflavíkra, bérautó átvétele a reptéren. <span class="note">A hosszú nappali fény (nyáron ~21–22 óra világos!) miatt nincs valódi jetlag.</span></span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Blue Lagoon</span> — a geotermikus fürdő a reptér mellett van, tökéletes érkezős program (előre foglalt időpont kötelező, ~65–90 €/fő). Alternatíva: Sky Lagoon Reykjavík mellett.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Beköltözés Reykjavíkban / közelében.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">2</span><span class="day-title">Reykjavík &amp; Perlan</span><span class="day-tag">Science + város</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Hallgrímskirkja</span> templom + torony, színes óváros, kikötő.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Perlan — Wonders of Iceland</span>: valódi jégbarlang (beltéri!), vulkán- és földrengés-kiállítás, planetárium (északi fény show). Pont a tini science-érdeklődésére.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what"><span class="gf">GF: Reykjavík meglepően gluténmentes-barát; a boltokban (Bónus, Krónan) is jól jelölt kaja.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">3</span><span class="day-title">Golden Circle</span><span class="day-tag">Geológia-wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Þingvellir Nemzeti Park</span> — itt szakad szét az eurázsiai és az észak-amerikai kőzetlemez, a hasadékban sétálsz! (geológia + a történelmi parlament helye).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Geysir &amp; Strokkur</span> — a 5–10 percenként kitörő gejzír; majd <span class="anchor">Gullfoss</span> vízesés.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Szállás Selfoss / Hella környékén. <span class="note">Backup: Kerið vulkáni krátertó útba ejtve.</span></span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">4</span><span class="day-title">Déli part — vízesések &amp; fekete homok</span><span class="day-tag">Természet</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Seljalandsfoss</span> (mögé lehet sétálni) és <span class="anchor">Skógafoss</span> vízesések. Útba esik a <span class="anchor">Lava Centre</span> (interaktív vulkán- és földrengés-múzeum Hvolsvöllurben — science).</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what"><span class="anchor">Reynisfjara feketehomokos tengerpart</span> bazaltoszlopokkal + Vík. <span class="note">⚠️ A „sneaker wave” veszélyes — tartsd a biztonságos távolságot a víztől!</span></span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Szállás Vík környékén.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">5</span><span class="day-title">Gleccserlagúna</span><span class="day-tag">Gleccser-wow</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Egész nap</span><span class="what"><span class="anchor">Jökulsárlón gleccserlagúna</span> — úszó jéghegyek a tavon (hajótúra opció), majd szemben a <span class="anchor">Diamond Beach</span>: jégdarabok a fekete homokon. A túloldalon a Vatnajökull, Európa legnagyobb gleccsere.</span></div>
+        <div class="block"><span class="when">Útközben</span><span class="what">Skaftafell (Vatnajökull NP) — rövid túra a Svartifoss bazaltvízeséshez; gleccsertúra opció (vezetővel).</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Szállás Höfn / Skaftafell környékén.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">6</span><span class="day-title">Vissza nyugatra</span><span class="day-tag">Természet</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what"><span class="anchor">Fjaðrárgljúfur kanyon</span> — drámai zöld szurdok.</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Opcionális <span class="anchor">Sólheimajökull gleccsertúra</span> (csákányos séta vezetővel — tini-kaland) vagy lazább visszaút.</span></div>
+        <div class="block"><span class="when">Este</span><span class="what">Szállás Selfoss / Hveragerði környékén.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">7</span><span class="day-title">Geotermál &amp; Reykjavík</span><span class="day-tag">Záró élmény</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Délelőtt</span><span class="what">Hveragerði geotermikus völgy (fortyogó forrás-mezők) vagy Reykjadalur „forró folyó” túra — meleg patakban lehet fürödni!</span></div>
+        <div class="block"><span class="when">Délután</span><span class="what">Vissza Reykjavíkba, ajándékok, utolsó séta. Autó feltankolása.</span></div>
+      </div></div>
+    <div class="day"><div class="day-head"><span class="day-num">8</span><span class="day-title">Hazaút</span><span class="day-tag">Záró nap</span></div>
+      <div class="blocks">
+        <div class="block"><span class="when">Nappal</span><span class="what">Autó leadása Keflavíkon, repülő haza.</span></div>
+      </div></div>
+  </div>
+
+  <h3>Költségbontás <small style="font-weight:400;font-size:.85rem;color:var(--muted)">(3 fő, 8 nap, középkategória)</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tétel</th><th class="num">EUR</th><th>Megjegyzés</th></tr></thead>
+    <tbody>
+      <tr><td>Repjegy BUD↔KEF (3 fő)</td><td class="num">400</td><td>Wizz direkt — meglepően olcsó</td></tr>
+      <tr><td>Pécs ↔ budapesti reptér</td><td class="num">80</td><td></td></tr>
+      <tr><td>Bérautó (7 nap, nyár)</td><td class="num">750</td><td>SUV/családi, ~100 €/nap csúcsszezon</td></tr>
+      <tr><td>Üzemanyag (benzin drága!)</td><td class="num">350</td><td>~1 200 km körút</td></tr>
+      <tr><td>Szállás (7 éj, vendégház/apartman)</td><td class="num">1 400</td><td>~200 €/éj csúcsszezon</td></tr>
+      <tr><td>Étkezés (8 nap, GF)</td><td class="num">1 600</td><td>Nagyon drága — a főétel 25–35 €</td></tr>
+      <tr><td>Belépők / fürdők / túrák</td><td class="num">900</td><td>Blue Lagoon, Perlan, gleccsertúra, hajó</td></tr>
+      <tr><td>Parkolók, apróbb költségek</td><td class="num">120</td><td></td></tr>
+      <tr class="total"><td>Összesen</td><td class="num">~5 600–6 000</td><td style="color:var(--crit)">A keret ~1,7-szerese</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Hogyan faragható le a költség?</h3>
+  <ul class="clean">
+    <li><b>Kempingkocsi (camper van)</b> — a szállás + autó egyben, önellátással. 4–5 nap így akár <b>~3 500–4 000 €</b> körül is behozható (de ez „kalandos” üzemmód, nem középkategória).</li>
+    <li><b>Önellátás a Bónus/Krónan boltokból</b> — az étteremköltség a legnagyobb tétel; napi reggeli + főzés sok ezer forintot spórol, és a boltok jól jelölik a gluténmentes termékeket.</li>
+    <li><b>Rövidebb út (5 nap)</b> — csak Golden Circle + déli part Vík-ig (a Jökulsárlón elhagyásával) → kevesebb szállás és üzemanyag.</li>
+    <li><b>Hostel/guesthouse közös fürdővel</b> — 30–40%-kal olcsóbb a hotelnél.</li>
+    <li><b>Hagyd el a Blue Lagoont</b> — a Reykjadalur „forró folyó” túra ingyenes, és autentikusabb élmény.</li>
+  </ul>
+
+  <h3>Előre foglalni</h3>
+  <ul class="clean">
+    <li><b>Repjegy + bérautó</b> — a nyári dátumok gyorsan elkelnek. <span class="deadline">3–5 hónappal előre.</span></li>
+    <li><b>Blue Lagoon / Sky Lagoon</b> — kötött időpont, előre elkel. <span class="deadline">Hetekkel előre.</span></li>
+    <li><b>Szállások a déli part mentén</b> — kevés a hely, nyáron telt ház. <span class="deadline">Minél előbb.</span></li>
+    <li><b>Gleccsertúra / lagúna-hajó</b> — vezetett program, limitált hely.</li>
+  </ul>
+
+  <div class="callout"><span class="tip">Insider tipp</span>Ha Izland a cél, inkább <b>halaszd egy nagyobb büdzsés évre</b>, és akkor csináld rendesen (7+ nap, nyugodt tempó) — a kapkodós, túl olcsóra húzott izlandi út pont a lényeget veszíti el. Nyáron a <b>21–22 órás nappali fény</b> miatt rugalmas a program (késő esti vízeséseknél alig van tömeg), viszont <b>északi fény nyáron nincs</b> — azt csak szept.–márc. között látni.</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Költségvetési puffer:</b> minden becslés tartalmaz ~10–15% ráhagyást, de tarts fenn külön is egy vésztartalékot (betegség, időjárás-backup, extra ajándék). A tartalék-oszlop ezt mutatja a 3 400 €-s kerethez mérve.</p>
+    <p style="margin-top:10px"><b>Fontos:</b> az árak 2026-os, élő keresésből származó becslések, és foglaláskor változhatnak. A jegyeket <b>nektek kell lefoglalni</b> — ez a terv a teendőket és határidőket gyűjti össze, nem foglal helyettetek.</p>
+    <p class="srcs">Források:
+      <a href="https://www.nhm.ac.uk">NHM London</a>
+      <a href="https://www.sciencemuseum.org.uk/visit">Science Museum</a>
+      <a href="https://www.rmg.co.uk/plan-your-visit/tickets-prices">Royal Observatory</a>
+      <a href="https://www.nhm.at/en">NHM Wien</a>
+      <a href="https://www.technischesmuseum.at">Technisches Museum</a>
+      <a href="https://www.dachstein-salzkammergut.com/en/tickets-offers">Dachstein</a>
+      <a href="https://www.deutsches-museum.de">Deutsches Museum</a>
+      <a href="https://www.neuschwanstein.de/englisch/tourist/admiss.htm">Neuschwanstein</a>
+      <a href="https://zugspitze.de">Zugspitze</a>
+      <a href="https://www.findmeglutenfree.com">FindMeGlutenFree</a>
+    </p>
+    <p class="disc">Készült: 2026. október · Családi nyaralásterv, Pécs kiindulással · 2 felnőtt + 1 (15 éves), gluténmentes.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(tab){
+    tabs.forEach(function(t){
+      var on=t===tab;
+      t.setAttribute('aria-selected',on?'true':'false');
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+    tab.focus();
+    window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+  }
+  tabs.forEach(function(tab,i){
+    tab.addEventListener('click',function(){sel(tab);});
+    tab.addEventListener('keydown',function(e){
+      var n;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home')n=tabs[0];
+      else if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();sel(n);}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
