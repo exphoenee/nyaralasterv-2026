@@ -61,6 +61,8 @@
     color:var(--accent);font-weight:700;margin:0 0 10px}
   h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3.2rem);
     line-height:1.05;margin:0 0 6px;text-wrap:balance;letter-spacing:-.01em}
+  .title-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
+  .title-row h1{margin:0;min-width:0}
   .sub{font-size:1.05rem;color:var(--ink-soft);margin:0 0 22px;max-width:60ch}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{display:inline-flex;align-items:center;gap:7px;background:var(--card);
@@ -202,7 +204,10 @@
 <header class="masthead">
   <div class="wrap">
     <p class="eyebrow">Családi nyaralásterv · Nyár 2026</p>
-    <h1>Négy úticél, egy keret</h1>
+    <div class="title-row">
+      <h1>Hat úticél, egy keret</h1>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="tlabel" id="themeLabel">Sötét</span></button>
+    </div>
     <p class="sub">Részletes, napról-napra tervek egy science- és történelem-rajongó családnak. Kiindulás: Pécs. A lencse: „végre láttunk valami nagyot”.</p>
     <div class="chips">
       <span class="chip">👨‍👩‍👦 <b>2 felnőtt + 1 (15 éves)</b></span>
@@ -225,7 +230,6 @@
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-iceland"  id="t-iceland">🌋 Izland <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-canada"   id="t-canada">🍁 Kanada <span style="font-size:.7em;opacity:.8">· kereten felül</span></button>
     </div>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="tlabel" id="themeLabel">Sötét</span></button>
   </div>
 </div>
 
